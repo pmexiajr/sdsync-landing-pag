@@ -14,7 +14,7 @@ export default function Home() {
         <div className="text-center flex flex-col gap-4">
           <h3>ACESSE NOSSA PLATAFORMA: </h3>
           <a href="http://app.sdsync.com.br" className="font-bold">
-            <h1 className="text-5xl border-4 text-white border-white rounded-lg p-3">
+            <h1 className="text-5xl border-4 text-white border-white rounded-lg p-3 hover:bg-white hover:text-[--primaria]">
               APP SDSYNC
             </h1>
           </a>
