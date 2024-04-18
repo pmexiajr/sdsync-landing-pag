@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primaria: #146082;
+  --secundaria: #bd7a42;
+}
+
+.primaria {
+  background-color: var(--primaria);
+}
+
+.secundaria {
+  background-color: var(--secundaria);
+}
