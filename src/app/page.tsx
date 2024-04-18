@@ -5,11 +5,20 @@ import logo from "../../public/SDSync - Logo.png";
 export default function Home() {
   return (
     <main className="w-full">
-      <nav className="primaria border p-4 text-white">Início</nav>
-      <section className="bg-white my-10 flex justify-center">
-        <Image src={logo} width={550} height={550} alt="SDSyncLogo" />
+      <section className="automacaoBg  bg-center h-[100svh] flex flex-col justify-center items-center">
+        <div className="w-full h-full opacityBg flex justify-center items-center">
+          <div className="w-[80%] py-20">
+            <Image
+              src={logo}
+              width={1000}
+              height={1000}
+              alt="SDSyncLogo"
+              className="w-full"
+            />
+          </div>
+        </div>
       </section>
-      <section className="secundaria p-20 flex justify-evenly items-center">
+      <section className="secundaria p-20 flex justify-evenly items-center ">
         <div>Bem Vindo!</div>
         <div className="text-center flex flex-col gap-4">
           <h3>ACESSE NOSSA PLATAFORMA: </h3>

@@ -14,3 +14,11 @@
 .secundaria {
   background-color: var(--secundaria);
 }
+
+.automacaoBg {
+  background-image: url("../../public/automacao.jpg");
+}
+
+.opacityBg {
+  background: rgba(255, 255, 255, 0.8);
+}
