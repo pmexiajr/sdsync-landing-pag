@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SmartData Sync",
-  description: "Made by Davi Taveira",
+  description: "A Web Scada product",
 };
 
 export default function RootLayout({

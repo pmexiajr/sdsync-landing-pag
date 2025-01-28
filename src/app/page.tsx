@@ -1,11 +1,15 @@
 import { url } from "inspector";
 import Image from "next/image";
 import logo from "../../public/SDSync - Logo.png";
+import Footer from "./components/Footer";
+import Features from "./components/Features";
+import Welcome from "./components/Welcome";
+import PricePlans from "./components/Pricing";
 
 export default function Home() {
   return (
     <main className="w-full">
-      <section className="automacaoBg  bg-center h-[100svh] flex flex-col justify-center items-center">
+      <section className="automacaoBg bg-center h-[100svh] flex flex-col justify-center items-center">
         <div className="w-full h-full opacityBg flex justify-center items-center">
           <div className="w-[80%] py-20">
             <Image
@@ -18,21 +22,23 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="secundaria p-20 flex justify-evenly items-center ">
-        <div>Bem Vindo!</div>
-        <div className="text-center flex flex-col gap-4">
-          <h3>ACESSE NOSSA PLATAFORMA: </h3>
-          <a href="http://app.sdsync.com.br" className="font-bold">
-            <h1 className="text-5xl border-4 text-white border-white rounded-lg p-3 hover:bg-white hover:text-[--primaria]">
-              APP SDSYNC
-            </h1>
-          </a>
-        </div>
+
+      <Welcome />
+
+
+      <section className="features-section py-16 text-center bg-gray-100" >
+        <h2 className="text-4xl font-bold text-black mb-4">Explore as Funcionalidades do SDSync</h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Descubra como o nosso sistema SCADA Web pode transformar seus processos industriais e oferecer uma gestão eficiente, segura e em tempo real.
+        </p>
+        <hr className="border-gray-300 my-8" />
       </section>
-      <section className="primaria text-white p-20 flex justify-evenly">
-        <div>Bem Vindo!</div>
-      </section>
-      <footer className="bg-gray-300 p-20 flex justify-center">@mextech</footer>
+
+      <Features />
+
+      {/* <PricePlans /> */}
+
+      <Footer />
     </main>
   );
 }
