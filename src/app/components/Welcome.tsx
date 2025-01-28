@@ -6,8 +6,8 @@ export default function WelcomePage() {
       className="min-h-screen bg-cover bg-center flex items-center justify-center text-white"
       style={{
         backgroundImage: `url(/paineis.jpg)`,
-        height: "130vh", // Aumentando a altura da tela para 130% da altura da tela do desktop
-        backgroundPosition: "center center", // Garantindo que a imagem esteja centralizada
+        height: "130vh",
+        backgroundPosition: "center center",
       }}
     >
       <section className="w-full flex justify-between items-center px-20">
@@ -25,7 +25,7 @@ export default function WelcomePage() {
             className="text-lg mb-6"
             style={{
               color: "rgb(255, 255, 255)",
-              textShadow: "1px 1px 4px rgb(0, 20, 51)",
+              textShadow: "2px 2px 6px rgb(0, 20, 51)",
             }}
           >
             Estamos animados para tê-lo conosco. Nossa plataforma foi projetada
