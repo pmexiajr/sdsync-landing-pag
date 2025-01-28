@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sobre = () => {
   return (
-    <div className="flex flex-row items-center justify-start py-16 px-12 max-w-7xl mx-auto">
+    <div className="flex flex-row items-center justify-start py-24 px-12 max-w-7xl mx-auto">
       {/* Texto */}
       <div className="max-w-lg text-left flex flex-col w-full">
         <h1 className="font-poppins font-medium text-[36px] leading-[54px] text-gray-900">

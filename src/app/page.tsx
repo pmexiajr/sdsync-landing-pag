@@ -23,20 +23,6 @@ export default function Home() {
 
   return (
     <main className="w-full bg-gray-100">
-      <section className="automacaoBg bg-center h-[100svh] flex flex-col justify-center items-center">
-        <div className="w-full h-full opacityBg flex justify-center items-center">
-          <div className="w-[80%] py-20">
-            <Image
-              src={logo}
-              width={1000}
-              height={1000}
-              alt="SDSyncLogo"
-              className="w-full"
-            />
-          </div>
-        </div>
-      </section>
-
       <div
         className={`transition-all duration-700 ease-out ${
           showWelcome ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -44,6 +30,23 @@ export default function Home() {
       >
         <Welcome />
       </div>
+
+      <section id="intro" className="py-16">
+      <div className="max-w-6xl mx-auto text-center">
+        <h1 className="text-4xl font-semibold leading-[46px]">
+          <a
+            href="http://app.sdsync.com.br"
+            className="text-blue-600 hover:underline"
+          >
+            SmartDataSync – SDSync 
+          </a>{" "}
+          é uma plataforma de monitoramento de desempenho para parques solares, com foco em maximizar o retorno do investimento.
+        </h1>
+        <h2 className="mt-12 text-lg text-[#899AAB] font-normal leading-relaxed max-w-6xl mx-auto">
+          O SDSync monitora em tempo real os principais ativos das usinas solares e fornece dados para otimizar o desempenho, detectando falhas e desvios nos parâmetros esperados.
+        </h2>
+      </div>
+    </section>
 
       <About />
       
