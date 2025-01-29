@@ -31,7 +31,7 @@ export default function Footer() {
 
     // Parâmetros do template do EmailJS
     const templateParams = {
-      to_email: "krosharesheniye@gmail.com",
+      to_email: "paulino.mexiajr@mextech.com.br",
       from_email: email,
       from_name: email, // Garante que o campo from_name seja o próprio e-mail
       message: message,
