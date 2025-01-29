@@ -92,12 +92,12 @@ export default function WelcomePage() {
             {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
 
             <div className="text-center mt-8">
-              <h1
-                onClick={handleScrollToBottom}
-                className="text-2xl border-2 text-white border-white rounded-md p-2 text-center hover:bg-white hover:text-[#146082] transition cursor-pointer"
+              <a
+                href="http://app.sdsync.com.br"
+                className="text-2xl border-2 text-white flex justify-center border-white rounded-md p-2 text-center hover:bg-white hover:text-[#146082] transition cursor-pointer"
               >
                 APP SDSYNC
-              </h1>
+              </a>
             </div>
           </div>
         </div>

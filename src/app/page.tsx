@@ -28,7 +28,9 @@ export default function Home() {
           showWelcome ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <Welcome />
+          <section id="intro">
+          <Welcome />
+        </section>
       </div>
 
       <section id="intro" className="py-16">
@@ -48,7 +50,9 @@ export default function Home() {
       </div>
     </section>
 
+      <section id="about">
       <About />
+    </section>
       
       <About2 />
       <section className="features-section py-6 text-center bg-white-100">
@@ -59,7 +63,9 @@ export default function Home() {
         <hr className="border-gray-300 my-2" />
       </section>
 
-      <Features />
+      <section id="features">
+        <Features />
+      </section>
 
       {/* <PricePlans /> */}
 

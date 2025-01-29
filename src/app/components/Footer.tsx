@@ -66,10 +66,9 @@ export default function Footer() {
         <div>
           <h5 className="text-lg font-bold text-white mb-4">Navegação</h5>
           <ul className="flex flex-col gap-2">
-            <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Sobre</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Features</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Preço</a></li>
+            <li><a href="#intro" className="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="#about" className="text-gray-400 hover:text-white">Sobre</a></li>
+            <li><a href="#features" className="text-gray-400 hover:text-white">Features</a></li>
           </ul>
         </div>
 
