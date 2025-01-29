@@ -1,17 +1,28 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import Image from "next/image"; // Importando o componente Image do Next.js
+import Image from "next/image";
 
 export default function WelcomePage() {
   const [showContent, setShowContent] = useState(false);
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    // Atraso de 3 segundos para iniciar a transição
     const timer = setTimeout(() => {
       setShowContent(true);
     }, 3000);
 
-    return () => clearTimeout(timer); // Limpa o timeout caso o componente seja desmontado antes
+    return () => clearTimeout(timer);
   }, []);
+
+  // Função para rolar a página até o fundo
+  const handleScrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <main className="min-h-screen bg-cover bg-center flex items-center justify-center text-white">
@@ -24,14 +35,12 @@ export default function WelcomePage() {
           height: "130vh",
         }}
       >
-        {/* Camada de opacidade */}
         <div
           className={`absolute inset-0 bg-white z-10 transition-opacity duration-1000 ${
             showContent ? "opacity-10" : "opacity-80"
           }`}
         ></div>
 
-        {/* Imagem SDSync no centro */}
         <div className="absolute w-[80%] py-20 flex justify-center items-center z-20">
           <Image
             src="/SLogo.png"
@@ -44,13 +53,12 @@ export default function WelcomePage() {
           />
         </div>
 
-        {/* Conteúdo sobre a camada */}
         <div
           className={`relative z-20 w-full flex justify-between items-center px-20 transition-opacity duration-1000 ${
             showContent ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="max-w-md">
+          <div className="max-w-md space-y-6">
             <h1
               className="text-6xl font-bold mb-4"
               style={{
@@ -72,29 +80,26 @@ export default function WelcomePage() {
               receber atualizações e novidades diretamente na sua caixa de entrada.
             </p>
 
-            <form className="flex gap-4 mb-6">
-              <input
-                type="email"
-                placeholder="Insira seu e-mail"
-                className="w-full p-3 rounded-lg text-black"
-              />
-              <button className="bg-[#F4A261] px-6 py-3 rounded-lg text-white font-bold hover:bg-[#E76F51] transition">
-                Enviar
+            <div className="flex justify-start">
+              <button
+                onClick={handleScrollToBottom}
+                className="text-white bg-blue-600 py-3 px-6 rounded-md shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
+              >
+                Fale Conosco
               </button>
-            </form>
+            </div>
 
-            {/* Botão APP SDSYNC abaixo do formulário */}
-            <div>
-              <a href="http://app.sdsync.com.br" className="font-bold">
-                <h1 className="text-2xl border-2 text-white border-white rounded-md p-2 text-center hover:bg-white hover:text-[#146082] transition">
-                  APP SDSYNC
-                </h1>
-              </a>
+            {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+
+            <div className="text-center mt-8">
+              <h1
+                onClick={handleScrollToBottom}
+                className="text-2xl border-2 text-white border-white rounded-md p-2 text-center hover:bg-white hover:text-[#146082] transition cursor-pointer"
+              >
+                APP SDSYNC
+              </h1>
             </div>
           </div>
-
-          {/* Seção Direita permanece vazia */}
-          <div></div>
         </div>
       </section>
     </main>
