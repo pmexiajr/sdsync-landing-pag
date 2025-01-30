@@ -19,7 +19,6 @@ export default function Footer() {
       return;
     }
 
-    // Abre o modal para perguntar a mensagem
     setIsModalOpen(true);
   };
 
@@ -33,16 +32,16 @@ export default function Footer() {
     const templateParams = {
       to_email: "paulino.mexiajr@mextech.com.br",
       from_email: email,
-      from_name: email, // Garante que o campo from_name seja o próprio e-mail
+      from_name: email,
       message: message,
     };
 
     emailjs
       .send(
-        "service_38lfzb8",
-        "template_ms3823c",
+        "service_0vo94vf",
+        "template_a123q4e",
         templateParams,
-        "Ik63F9w4Ivfj49xlh"
+        "QA2x3lV2DJbmq8PlX"
       )
       .then(
         (response) => {
