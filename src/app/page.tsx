@@ -22,7 +22,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full bg-gray-100">
+    <main className="w-full bg-[#DCE5F4]">
       <div
         className={`transition-all duration-700 ease-out ${
           showWelcome ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -33,22 +33,26 @@ export default function Home() {
         </section>
       </div>
 
-      <section id="intro" className="py-16">
-      <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-4xl font-semibold leading-[46px]">
-          <a
-            href="http://app.sdsync.com.br"
-            className="text-blue-600 hover:underline"
-          >
-            SmartDataSync – SDSync 
-          </a>{" "}
-          é uma plataforma de monitoramento de desempenho para parques solares, com foco em maximizar o retorno do investimento.
-        </h1>
-        <h2 className="mt-12 text-lg text-[#899AAB] font-normal leading-relaxed max-w-6xl mx-auto">
-          O SDSync monitora em tempo real os principais ativos das usinas solares e fornece dados para otimizar o desempenho, detectando falhas e desvios nos parâmetros esperados.
-        </h2>
-      </div>
-    </section>
+      <section id="intro" className="py-16 bg-[#DCE5F4]">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl font-semibold leading-[52px] text-[#101B23] mb-8">
+            <a
+              href="http://app.sdsync.com.br"
+              className="text-[#E01A4F] hover:text-[#FF4000] transition-colors duration-300"
+            >
+              SmartDataSync – SDSync 
+            </a>
+            <span className="block mt-4">é uma plataforma de monitoramento de desempenho para parques solares</span>
+          </h1>
+          
+          <h2 className="mt-6 text-xl text-[#75767C] font-medium leading-6 max-w-4xl mx-auto tracking-wide">
+            Monitoramento em tempo real dos principais ativos das usinas solares com análise preditiva, 
+            detecção de falhas e otimização contínua do ROI através de inteligência de dados avançada.
+          </h2>
+
+          <div className="mt-8 border-b-2 border-[#09BC8A] w-24 mx-auto"></div>
+        </div>
+      </section>
 
       <section id="about">
       <About />
@@ -66,8 +70,6 @@ export default function Home() {
       <section id="features">
         <Features />
       </section>
-
-      {/* <PricePlans /> */}
 
       <Footer />
     </main>

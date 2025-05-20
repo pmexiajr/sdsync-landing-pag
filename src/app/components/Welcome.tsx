@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { ArrowDownCircleIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function WelcomePage() {
   const [showContent, setShowContent] = useState(false);
@@ -11,12 +12,11 @@ export default function WelcomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 3000);
+    }, 1500); // Tempo reduzido para melhor experiência
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Função para rolar a página até o fundo
   const handleScrollToBottom = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
@@ -25,19 +25,18 @@ export default function WelcomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-cover bg-center flex items-center justify-center text-white">
+    <main className="min-h-screen bg-cover bg-center flex items-center justify-center text-[#DCE5F4]">
       <section
         className="w-full h-full flex justify-center items-center bg-center relative"
         style={{
-          backgroundImage: `url(/automacao.jpg)`,
-          backgroundPosition: "center center",
+          backgroundImage: `url(/Solar.jpg)`,
           backgroundSize: "cover",
           height: "130vh",
         }}
       >
         <div
-          className={`absolute inset-0 bg-white z-10 transition-opacity duration-1000 ${
-            showContent ? "opacity-10" : "opacity-80"
+          className={`absolute inset-0 bg-[#101B23] z-10 transition-opacity duration-1000 ${
+            showContent ? "opacity-70" : "opacity-90"
           }`}
         ></div>
 
@@ -50,55 +49,51 @@ export default function WelcomePage() {
             className={`w-full transition-opacity duration-1000 ${
               showContent ? "opacity-0" : "opacity-100"
             }`}
+            priority
           />
         </div>
 
         <div
-          className={`relative z-20 w-full flex justify-between items-center px-20 transition-opacity duration-1000 ${
-            showContent ? "opacity-100" : "opacity-0"
+          className={`relative z-20 w-full flex justify-between items-center px-4 md:px-20 transition-all duration-1000 ${
+            showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="max-w-md space-y-6">
-            <h1
-              className="text-6xl font-bold mb-4"
-              style={{
-                color: "rgb(255, 255, 255)",
-                textShadow: "4px 4px 12px rgba(0, 0, 0, 0.62)",
-              }}
-            >
-              Bem-vindo à nossa plataforma!
+          <div className="max-w-2xl space-y-8 text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#DCE5F4] to-[#FF4000]">
+              Bem-vindo à SDSync!
             </h1>
-            <p
-              className="text-lg mb-6"
-              style={{
-                color: "rgb(255, 255, 255)",
-                textShadow: "2px 2px 2px rgb(0, 20, 51)",
-              }}
-            >
-              Estamos animados para tê-lo conosco. Nossa plataforma foi projetada
-              para oferecer a melhor experiência possível. Envie seu e-mail para
-              receber atualizações e novidades diretamente na sua caixa de entrada.
-            </p>
+            
+            <div className="space-y-4">
+              <p className="text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto md:mx-0">
+                Monitoramento inteligente para maximizar o potencial da sua usina solar. 
+                Receba insights valiosos e alertas em tempo real para otimizar seu investimento.
+              </p>
 
-            <div className="flex justify-start">
-              <button
-                onClick={handleScrollToBottom}
-                className="text-white bg-blue-600 py-3 px-6 rounded-md shadow-md hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
-              >
-                Fale Conosco
-              </button>
+              <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                <button
+                  onClick={handleScrollToBottom}
+                  className="flex items-center gap-2 bg-[#FF4000] text-[#DCE5F4] py-3 px-8 rounded-lg shadow-lg hover:bg-[#FF4000]/90 transition-all group"
+                >
+                  <span>Fale Conosco</span>
+                  <ArrowDownCircleIcon className="w-5 h-5 group-hover:animate-bounce" />
+                </button>
+
+                <a
+                  href="http://app.sdsync.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative flex items-center gap-2 bg-[#09BC8A] text-[#101B23] py-3 px-8 rounded-lg shadow-lg overflow-hidden group transition-all"
+                >
+                  <div className="absolute inset-0 bg-[#07A076] w-0 group-hover:w-full transition-all duration-300 ease-out origin-left"></div>
+                  <span className="relative z-10">Acessar Plataforma</span>
+                  <ArrowRightIcon className="w-5 h-5 relative z-10 transition-transform group-hover:translate-x-2 group-hover:scale-110 duration-300" />
+                </a>
+              </div>
             </div>
 
-            {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
-
-            <div className="text-center mt-8">
-              <a
-                href="http://app.sdsync.com.br"
-                className="text-2xl border-2 text-white flex justify-center border-white rounded-md p-2 text-center hover:bg-white hover:text-[#146082] transition cursor-pointer"
-              >
-                APP SDSYNC
-              </a>
-            </div>
+            {errorMessage && (
+              <p className="text-[#FF4000] mt-4 animate-pulse">{errorMessage}</p>
+            )}
           </div>
         </div>
       </section>
