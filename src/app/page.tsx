@@ -9,6 +9,7 @@ import Welcome from "./components/Welcome";
 import About from "./components/About";
 import About2 from "./components/About2";
 import PricePlans from "./components/Pricing";
+import Header from "./components/Header";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState(false);
@@ -23,12 +24,14 @@ export default function Home() {
 
   return (
     <main className="w-full bg-[#DCE5F4]">
+      <Header />
+
       <div
         className={`transition-all duration-700 ease-out ${
           showWelcome ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-          <section id="intro">
+        <section id="intro">
           <Welcome />
         </section>
       </div>
@@ -55,17 +58,10 @@ export default function Home() {
       </section>
 
       <section id="about">
-      <About />
-    </section>
+        <About />
+      </section>
       
       <About2 />
-      <section className="features-section py-6 text-center bg-white-100">
-        <h2 className="text-4xl font-bold text-black mb-4">Explore as Funcionalidades do SDSync</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          Descubra como o nosso sistema SCADA Web pode transformar seus processos industriais e oferecer uma gestão eficiente, segura e em tempo real.
-        </p>
-        <hr className="border-gray-300 my-2" />
-      </section>
 
       <section id="features">
         <Features />
