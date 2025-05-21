@@ -42,7 +42,7 @@ export default function WelcomePage() {
 
         <div className="absolute w-[80%] py-20 flex justify-center items-center z-20">
           <Image
-            src="/SLogo.png"
+            src="/IconeSD.png"
             width={1000}
             height={1000}
             alt="SDSyncLogo"
