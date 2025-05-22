@@ -8,6 +8,7 @@ import Features from "./components/Features";
 import Welcome from "./components/Welcome";
 import About from "./components/About";
 import About2 from "./components/About2";
+import Solution from "./components/Solution";
 import PricePlans from "./components/Pricing";
 import Header from "./components/Header";
 
@@ -60,8 +61,13 @@ export default function Home() {
       <section id="about">
         <About />
       </section>
-      
+      <section id="solution">
+        <Solution />
+      </section>
+          
+    <section id="about2">
       <About2 />
+    </section>
 
       <section id="features">
         <Features />

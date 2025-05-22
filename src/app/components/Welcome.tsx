@@ -65,8 +65,9 @@ export default function WelcomePage() {
             
             <div className="space-y-4">
               <p className="text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto md:mx-0">
-                Monitoramento inteligente para maximizar o potencial da sua usina solar. 
-                Receba insights valiosos e alertas em tempo real para otimizar seu investimento.
+                Solução SaaS para monitoramento inteligente de GD: análise em tempo real, 
+                alertas automáticos e compatibilidade com diversos inversores - toda a gestão 
+                energética através de plataforma web integrada.
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">

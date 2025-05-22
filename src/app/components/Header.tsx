@@ -43,10 +43,13 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-6 py-3 lg:px-8" aria-label="Global">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="-m-3 p-1.5">
-              <span className="sr-only">Mexhtech</span>
+            <a 
+              href="#" 
+              className="-m-3 p-1.5 transition-transform duration-300 ease-in-out hover:scale-105"
+            >
+              <span className="sr-only">Mextech</span>
               <img
-                alt="Logo da Sua Empresa"
+                alt="Logo"
                 src="/IconeSD.png"
                 className="h-16 w-auto object-contain"
               />
@@ -55,7 +58,7 @@ export default function Header() {
           
           <PopoverGroup className="hidden lg:flex lg:gap-x-8 lg:items-center">
             <a href="#intro" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
-              Sobre
+              Solução
             </a>
             <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Vantagens
@@ -63,11 +66,18 @@ export default function Header() {
             <a href="#features" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Funcionalidades
             </a>
+            <a href="#features" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+              Planos & Serviços 
+            </a>
+            <a href="#contact" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+              Sobre Nós
+            </a>
             <a href="#contact" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Contato
             </a>
             
-            <Popover className="relative">
+            {/* Section Tipo lista com itens que remetem a servicos prestados */}
+            {/* <Popover className="relative">
               <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors focus:outline-none">
                 Produto
                 <ChevronDownIcon className="h-5 w-5 flex-none text-gray-300" aria-hidden="true" />
@@ -106,7 +116,8 @@ export default function Header() {
                   ))}
                 </div>
               </PopoverPanel>
-            </Popover>
+            </Popover> */}
+
           </PopoverGroup>
 
           <div className="flex lg:hidden">
