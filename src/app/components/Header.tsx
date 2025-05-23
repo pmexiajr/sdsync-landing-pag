@@ -57,22 +57,19 @@ export default function Header() {
           </div>
           
           <PopoverGroup className="hidden lg:flex lg:gap-x-8 lg:items-center">
-            <a href="#intro" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#solution" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Solução
             </a>
-            <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#about2" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Vantagens
             </a>
             <a href="#features" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
-              Funcionalidades
+              Planos & Serviços
             </a>
-            <a href="#features" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
-              Planos & Serviços 
-            </a>
-            <a href="#contact" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Sobre Nós
             </a>
-            <a href="#contact" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#Footer" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Contato
             </a>
             

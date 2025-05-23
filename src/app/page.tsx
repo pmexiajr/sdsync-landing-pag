@@ -10,6 +10,7 @@ import About from "./components/About";
 import About2 from "./components/About2";
 import Solution from "./components/Solution";
 import PricePlans from "./components/Pricing";
+import AboutUs from "./components/AboutUs";
 import Header from "./components/Header";
 
 export default function Home() {
@@ -69,11 +70,12 @@ export default function Home() {
       <About2 />
     </section>
 
-      <section id="features">
-        <Features />
-      </section>
-
+    <section id="AboutUs">
+      <AboutUs />
+    </section>
+      <section id="Footer">
       <Footer />
+    </section>
     </main>
   );
 }
