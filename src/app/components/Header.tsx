@@ -60,13 +60,13 @@ export default function Header() {
             <a href="#solution" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Solução
             </a>
-            <a href="#about2" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#Advantages" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Vantagens
             </a>
             <a href="#features" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Planos & Serviços
             </a>
-            <a href="#about" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#AboutUs" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Sobre Nós
             </a>
             <a href="#Footer" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">

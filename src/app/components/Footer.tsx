@@ -64,10 +64,31 @@ export default function Footer() {
         <div>
           <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Navegação</h5>
           <ul className="flex flex-col gap-3">
-            <li><a href="#intro" className="text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">Home</a></li>
-            <li><a href="#about" className="text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">Sobre</a></li>
-            <li><a href="#features" className="text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">Features</a></li>
-            <li><a href="#contact" className="text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">Contato</a></li>
+            <li>
+              <a href="#solution" className="text-sm font-semibold leading-6 text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">
+                Solução
+              </a>
+            </li>
+            <li>
+              <a href="#Advantages" className="text-sm font-semibold leading-6 text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">
+                Vantagens
+              </a>
+            </li>
+            <li>
+              <a href="#features" className="text-sm font-semibold leading-6 text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">
+                Planos & Serviços
+              </a>
+            </li>
+            <li>
+              <a href="#AboutUs" className="text-sm font-semibold leading-6 text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">
+                Sobre Nós
+              </a>
+            </li>
+            <li>
+              <a href="#Footer" className="text-sm font-semibold leading-6 text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">
+                Contato
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -75,9 +96,9 @@ export default function Footer() {
           <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Sobre nós</h5>
           <p className="text-[#DCE5F4]/90 mb-4">Estamos sempre prontos para atender às suas necessidades.</p>
           <div className="flex items-center gap-2">
-            <a 
-              href="https://www.linkedin.com/company/sdsync/posts/?feedView=all" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/company/sdsync/posts/?feedView=all"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-[#DCE5F4] hover:text-[#0077B5] transition-colors"
             >
@@ -109,8 +130,8 @@ export default function Footer() {
               className="flex-grow px-4 py-2 border border-[#DCE5F4]/50 rounded-lg focus:ring-2 focus:ring-[#FF4000] text-[#153243]"
               required
             />
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="px-6 py-2 bg-[#FF4000] text-[#DCE5F4] rounded-lg hover:bg-[#FF4000]/90 transition-colors whitespace-nowrap"
             >
               Enviar
@@ -140,14 +161,14 @@ export default function Footer() {
               required
             ></textarea>
             <div className="flex justify-end mt-4 gap-3">
-              <button 
-                onClick={() => setIsModalOpen(false)} 
+              <button
+                onClick={() => setIsModalOpen(false)}
                 className="px-4 py-2 bg-[#75767C] text-[#DCE5F4] rounded-lg hover:bg-[#5E6066] transition-colors"
               >
                 Cancelar
               </button>
-              <button 
-                onClick={handleSendEmail} 
+              <button
+                onClick={handleSendEmail}
                 className="px-4 py-2 bg-[#09BC8A] text-[#101B23] rounded-lg hover:bg-[#07A076] transition-colors"
               >
                 Enviar mensagem

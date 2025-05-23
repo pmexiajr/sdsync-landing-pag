@@ -71,6 +71,11 @@ export default function Home() {
       <Advantages />
     </section>
 
+    <section id="PricePlans">
+      <PricePlans />
+    </section>
+
+
     <section id="AboutUs">
       <AboutUs />
     </section>
