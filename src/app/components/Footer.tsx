@@ -75,7 +75,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#features" className="text-sm font-semibold leading-6 text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">
+              <a href="#PricePlans" className="text-sm font-semibold leading-6 text-[#DCE5F4] hover:text-[#DCE5F4]/80 transition-colors">
                 Planos & Serviços
               </a>
             </li>

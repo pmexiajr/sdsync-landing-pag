@@ -105,7 +105,7 @@ const PlanCard = ({ plan }: { plan: Plan }) => (
       className="w-full py-3 rounded-lg font-semibold transition-all border border-[rgba(255,255,255,0.1)]"
       style={{
         backgroundColor: `${plan.color}CC`,
-        color: '#FFFFFF' // Texto em branco
+        color: '#FFFFFF'
       }}
       whileHover={{ 
         scale: 1.05,

@@ -19,7 +19,7 @@ const Presentation = () => {
 
         <div className="mt-6 border-l-4 border-[#09BC8A] pl-4">
           <p className="font-poppins text-[22px] font-semibold leading-[34px] text-[#153243]">
-            "Eficiência energética maximizada através de tecnologia de ponta"
+            &quot;Eficiência energética maximizada através de tecnologia de ponta&quot;
           </p>
         </div>
 

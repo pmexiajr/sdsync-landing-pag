@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image' 
 import {
   Dialog,
   DialogPanel,
@@ -47,12 +48,17 @@ export default function Header() {
               href="#" 
               className="-m-3 p-1.5 transition-transform duration-300 ease-in-out hover:scale-105"
             >
-              <span className="sr-only">Mextech</span>
-              <img
-                alt="Logo"
-                src="/IconeSD.png"
-                className="h-16 w-auto object-contain"
-              />
+              <span className="sr-only">SDSync</span>
+              <div className="relative h-16 w-40">
+                <Image
+                  alt="Logo SDSync"
+                  src="/IconeSD.png"
+                  fill
+                  className="object-contain"
+                  priority
+                  sizes="(max-width: 768px) 100px, 160px"
+                />
+              </div>
             </a>
           </div>
           
@@ -63,7 +69,7 @@ export default function Header() {
             <a href="#Advantages" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Vantagens
             </a>
-            <a href="#features" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#PricePlans" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Planos & Serviços
             </a>
             <a href="#AboutUs" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
