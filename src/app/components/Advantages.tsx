@@ -10,7 +10,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-const Sobre = () => {
+const Advantages = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleImageClick = (imageSrc: string) => {
@@ -175,4 +175,4 @@ const Sobre = () => {
   );
 };
 
-export default Sobre;
+export default Advantages;

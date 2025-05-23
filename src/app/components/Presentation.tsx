@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Sobre = () => {
+const Presentation = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between py-16 px-6 lg:py-24 lg:px-12 max-w-7xl mx-auto gap-8">
       {/* Texto */}
@@ -57,4 +57,4 @@ const Sobre = () => {
   );
 };
 
-export default Sobre;
+export default Presentation;

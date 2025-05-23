@@ -6,12 +6,13 @@ import logo from "../../public/SDSync - Logo.png";
 import Footer from "./components/Footer";
 import Features from "./components/Features";
 import Welcome from "./components/Welcome";
-import About from "./components/About";
-import About2 from "./components/About2";
+import Presentation from "./components/Presentation";
+import Advantages from "./components/Advantages";
 import Solution from "./components/Solution";
 import PricePlans from "./components/Pricing";
 import AboutUs from "./components/AboutUs";
 import Header from "./components/Header";
+
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState(false);
@@ -59,15 +60,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about">
-        <About />
+      <section id="Presentation">
+        <Presentation />
       </section>
       <section id="solution">
         <Solution />
       </section>
           
-    <section id="about2">
-      <About2 />
+    <section id="Advantages">
+      <Advantages />
     </section>
 
     <section id="AboutUs">
