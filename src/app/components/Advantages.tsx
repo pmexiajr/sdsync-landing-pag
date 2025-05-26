@@ -44,7 +44,7 @@ const Advantages = () => {
         </div>
       )}
 
-      <div className="flex flex-col lg:flex-row items-center justify-start py-12 px-6 lg:py-2 lg:px-12 max-w-7xl mx-auto gap-8">
+      <div className="flex flex-col lg:flex-row items-center justify-start py-12 px-6 lg:py-24 lg:px-12 max-w-7xl mx-auto gap-8">
         
         <div className="w-full lg:w-[55%] space-y-4">
           <div 

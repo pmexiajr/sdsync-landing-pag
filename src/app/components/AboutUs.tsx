@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { div } from 'framer-motion/client';
 import Image from 'next/image';
+import { FiBarChart2, FiTarget } from 'react-icons/fi';
 
 export default function AboutUs() {
   return (
@@ -100,23 +102,58 @@ export default function AboutUs() {
           </motion.div>
 
         </div>
-        <motion.div
-          className="grid grid-cols-2 gap-[12px] mt-[4px] w-full"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <div className="bg-[#101B23]/1 p-8 rounded-2xl border-l-[6px] border-[#101B23]">
-            <p className="text-xl font-semibold text-[#101B23] leading-normal">
-              Nosso compromisso é transformar dados em decisões assertivas, ampliando a rentabilidade e o controle das usinas. Mais do que uma plataforma, somos um ecossistema de inovação, onde tecnologia e propósito se encontram para gerar impacto real.
-            </p>
-          </div>
-          <div className="bg-[#2B6CB0]/10 p-8 rounded-2xl border-l-[6px] border-[#2B6CB0]">
-            <p className="text-xl font-semibold text-[#101B23] leading-normal">
-              Informações acessíveis impulsionam a performance e fortalecem a tomada de decisão.
-              Sua usina solar em máxima performance
-            </p>
-          </div>
-        </motion.div>
+<div className="space-y-8">
+  <motion.h2
+    className="text-4xl md:text-5xl font-bold text-[#101B23] tracking-tight"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+  >
+    Nosso Propósito
+    <span className="block h-1 w-20 bg-[#E01A4F] mt-4 rounded-full"></span>
+  </motion.h2>
+
+  <motion.div
+    className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ staggerChildren: 0.2 }}
+  >
+    <motion.div
+      className="bg-white p-8 rounded-2xl border-l-4 border-[#E01A4F] shadow-sm hover:shadow-md transition-all"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      whileHover={{ y: -5 }}
+    >
+      <div className="flex items-start space-x-4">
+        <div className="bg-[#E01A4F]/10 p-3 rounded-full">
+          <FiTarget className="text-[#E01A4F] text-xl" />
+        </div>
+        <p className="text-lg text-[#101B23] leading-relaxed">
+          Nosso compromisso é transformar dados em decisões assertivas, ampliando a rentabilidade e o controle das usinas. Mais do que uma plataforma, somos um ecossistema de inovação, onde tecnologia e propósito se encontram para gerar impacto real.
+        </p>
+      </div>
+    </motion.div>
+
+    <motion.div
+      className="bg-white p-8 rounded-2xl border-l-4 border-[#2B6CB0] shadow-sm hover:shadow-md transition-all"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.2 }}
+      whileHover={{ y: -5 }}
+    >
+      <div className="flex items-start space-x-4">
+        <div className="bg-[#2B6CB0]/10 p-3 rounded-full">
+          <FiBarChart2 className="text-[#2B6CB0] text-xl" />
+        </div>
+        <p className="text-lg text-[#101B23] leading-relaxed">
+          Informações acessíveis impulsionam a performance e fortalecem a tomada de decisão. Oferecemos uma visão holística para que sua usina solar opere sempre em máxima performance.
+        </p>
+      </div>
+    </motion.div>
+  </motion.div>
+</div>
       </div>
     </section>
   );
