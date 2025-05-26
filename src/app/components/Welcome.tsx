@@ -12,7 +12,7 @@ export default function WelcomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 1500); // Tempo reduzido para melhor experiência
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -65,9 +65,8 @@ export default function WelcomePage() {
             
             <div className="space-y-4">
               <p className="text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto md:mx-0">
-                Solução SaaS para monitoramento inteligente de GD: análise em tempo real, 
-                alertas automáticos e compatibilidade com diversos inversores - toda a gestão 
-                energética através de plataforma web integrada.
+                  Monitoramento de Usinas GD com Alertas Automatizados
+                  Plataforma SaaS com alertas diários via WhatsApp, compatível com diversos inversores.<br></br>Detecte falhas, visualize performance e otimize seus resultados — tudo sem a necessidade de infraestrutura local.
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../../public/SDSync - Logo.png";
 import Footer from "./components/Footer";
-import Features from "./components/Features";
 import Welcome from "./components/Welcome";
 import Presentation from "./components/Presentation";
 import Advantages from "./components/Advantages";

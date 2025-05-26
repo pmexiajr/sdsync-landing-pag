@@ -1,4 +1,5 @@
-import { ShieldCheckIcon, ClockIcon, CloudIcon } from "@heroicons/react/24/outline";
+import { ShieldCheckIcon, CloudIcon } from "@heroicons/react/24/outline";
+import { FaWhatsapp } from "react-icons/fa";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -25,16 +26,6 @@ export default function Solution() {
 
   const features: FeatureCardProps[] = [
     {
-      title: "Monitoramento em Tempo Real",
-      description: "Dashboards dinâmicos de todos os dispositivos industriais",
-      image: "/solarsas.jpg",
-      expandedDescription: "Visualização completa do status operacional com atualizações a cada 500ms, detecção imediata de anomalias e performance de inversores",
-      tags: [
-        { name: "Dashboards", colorHex: "#0B6E4F" },
-        { name: "Tempo Real", colorHex: "#2B6CB0" }
-      ]
-    },
-    {
       title: "Análise Ambiental e Previsão",
       description: "Monitoramento de irradiação e clima integrado",
       image: "/solarsas.jpg",
@@ -42,17 +33,6 @@ export default function Solution() {
       tags: [
         { name: "Clima", colorHex: "#2D7D9A" },
         { name: "Energia", colorHex: "#F6AE2D" }
-      ]
-    },
-    {
-      title: "Relatórios Diários via WhatsApp",
-      description: "Envio automático de performance diária",
-      image: "/solarsas.jpg",
-      expandedDescription: "Serviço opcional que envia diariamente pelo WhatsApp:\n- Energia total gerada\n- Rendimento financeiro\n- Efficiency Ratio\n- Alertas críticos",
-      tags: [
-        { name: "WhatsApp", colorHex: "#25D366" },
-        { name: "Relatórios", colorHex: "#0B6E4F" },
-        { name: "Customizável", colorHex: "#4A6FA5" }
       ]
     },
     {
@@ -92,7 +72,9 @@ export default function Solution() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-20 space-y-12">
           <div className="space-y-6">
-            <h1 className="text-5xl font-bold text-[#DCE5F4]">Explore as soluções do SDSync</h1>
+            <h1 className="text-5xl font-bold text-[#DCE5F4]">Explore as soluções do <span className="block mt-2 bg-gradient-to-r from-[#FF4000] to-[#E01A4F] text-transparent bg-clip-text">
+                SDSync
+              </span></h1>
             <p className="mx-auto max-w-3xl text-xl text-[#9FB3C8] leading-relaxed">
               O SDSync é uma plataforma SaaS para monitoramento inteligente de usinas solares de Geração Distribuída
             </p>
@@ -106,9 +88,9 @@ export default function Solution() {
             </div>
             
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
-              <ClockIcon className="h-12 w-12 mx-auto text-[#FF4000]" />
-              <h3 className="text-2xl font-semibold text-[#DCE5F4] mt-4">Tempo Real</h3>
-              <p className="text-[#9FB3C8] mt-2">Dados atualizados a cada 15 segundos</p>
+              <FaWhatsapp className="h-12 w-12 mx-auto text-[#25D366]" />
+              <h3 className="text-2xl font-semibold text-[#DCE5F4] mt-4">WhatsApp</h3>
+              <p className="text-[#9FB3C8] mt-2">Receba análises diárias de geração e rendimento diretamente</p>
             </div>
 
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
@@ -135,6 +117,10 @@ export default function Solution() {
                 SDSync
               </span>
             </h2>
+                        <p className="mx-auto max-w-3xl text-xl text-[#9FB3C8] leading-relaxed">
+               Tecnologia inteligente que vai além do monitoramento - tudo o que sua usina solar precisa 
+      para atingir o máximo potencial.
+            </p>
           </div>
 
           {selectedImage && (
@@ -154,76 +140,76 @@ export default function Solution() {
             </div>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="group relative transform transition-all duration-500 hover:-translate-y-1">
-                <div className="bg-white rounded-2xl shadow-xl h-full flex flex-col overflow-hidden border-1 border-transparent hover:border-[#FF4000]/10 transition-all">
-                  <div 
-                    className="relative h-56 overflow-hidden rounded-t-2xl cursor-zoom-in"
-                    onClick={() => handleImageClick(feature.image)}
-                  >
-                    <Image
-                      src={feature.image}
-                      alt="Imagem do Card"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute bottom-4 left-4 text-white space-y-1">
-                      <h3 className="text-xl font-bold">{feature.title}</h3>
-                      <p className="text-sm opacity-0 translate-y-2 group-hover:translate-y-0 group-hover:opacity-80 transition-all duration-500">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="p-6 flex-1 flex flex-col">
-                    <button
-                      onClick={() => {
-                        const newShow = [...show];
-                        newShow[index] = !newShow[index];
-                        setShow(newShow);
-                      }}
-                      className="w-full flex items-center justify-between group"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {features.map((feature, index) => (
+                <div key={index} className="group relative transform transition-all duration-500 hover:-translate-y-1">
+                  <div className="bg-white rounded-2xl shadow-xl h-full flex flex-col overflow-hidden border-1 border-transparent hover:border-[#FF4000]/10 transition-all">
+                    <div 
+                      className="relative h-56 overflow-hidden rounded-t-2xl cursor-zoom-in"
+                      onClick={() => handleImageClick(feature.image)}
                     >
-                      <span className="text-[#4494D5] font-semibold flex items-center gap-2">
-                        <span className="inline-block w-2 h-2 bg-[#4494D5] rounded-full transition-all group-hover:w-4"></span>
-                        {show[index] ? 'Recolher detalhes' : 'Expandir recursos'}
-                      </span>
-                      <div className={`transition-transform ${show[index] ? 'rotate-180' : ''}`}>
-                        <svg className="w-6 h-6 text-[#4494D5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </button>
-
-                    <div className={`overflow-hidden transition-all ${show[index] ? 'max-h-96 mt-4' : 'max-h-0'}`}>
-                      <div className="pt-4 border-t border-[#DCE5F4]">
-                        <p className="text-[#101B23] leading-relaxed whitespace-pre-line">
-                          {feature.expandedDescription}
+                      <Image
+                        src={feature.image}
+                        alt="Imagem do Card"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute bottom-4 left-4 text-white space-y-1">
+                        <h3 className="text-xl font-bold">{feature.title}</h3>
+                        <p className="text-sm opacity-0 translate-y-2 group-hover:translate-y-0 group-hover:opacity-80 transition-all duration-500">
+                          {feature.description}
                         </p>
-                        {feature.tags && (
-                          <div className="mt-4 flex flex-wrap gap-2">
-                            {feature.tags.map((tag, tagIndex) => (
-                              <span
-                                key={tagIndex}
-                                className="px-3 py-1 rounded-full text-sm"
-                                style={{
-                                  backgroundColor: `${tag.colorHex}1a`,
-                                  color: tag.colorHex
-                                }}
-                              >
-                                {tag.name}
-                              </span>
-                            ))}
-                          </div>
-                        )}
+                      </div>
+                    </div>
+
+                    <div className="p-6 flex-1 flex flex-col">
+                      <button
+                        onClick={() => {
+                          const newShow = [...show];
+                          newShow[index] = !newShow[index];
+                          setShow(newShow);
+                        }}
+                        className="w-full flex items-center justify-between group"
+                      >
+                        <span className="text-[#4494D5] font-semibold flex items-center gap-2">
+                          <span className="inline-block w-2 h-2 bg-[#4494D5] rounded-full transition-all group-hover:w-4"></span>
+                          {show[index] ? 'Recolher detalhes' : 'Saiba mais'}
+                        </span>
+                        <div className={`transition-transform ${show[index] ? 'rotate-180' : ''}`}>
+                          <svg className="w-6 h-6 text-[#4494D5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </button>
+
+                      <div className={`overflow-hidden transition-all ${show[index] ? 'max-h-96 mt-4' : 'max-h-0'}`}>
+                        <div className="pt-4 border-t border-[#DCE5F4]">
+                          <p className="text-[#101B23] leading-relaxed whitespace-pre-line">
+                            {feature.expandedDescription}
+                          </p>
+                          {feature.tags && (
+                            <div className="mt-4 flex flex-wrap gap-2">
+                              {feature.tags.map((tag, tagIndex) => (
+                                <span
+                                  key={tagIndex}
+                                  className="px-3 py-1 rounded-full text-sm"
+                                  style={{
+                                    backgroundColor: `${tag.colorHex}1a`,
+                                    color: tag.colorHex
+                                  }}
+                                >
+                                  {tag.name}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
         </div>
       </div>
     </div>

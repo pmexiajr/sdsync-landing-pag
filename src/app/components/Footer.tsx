@@ -112,7 +112,7 @@ export default function Footer() {
           <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Contato</h5>
           <address className="not-italic text-[#DCE5F4]/90">
             <p className="mb-2">+44 9948-1127</p>
-            <p className="mb-2">paulino.mexia@sdsync.com.br</p>
+            <p className="mb-2">comercial@sdsync.com.br</p>
             <p className="mb-2">Av. Humanita 452 - Sala 301</p>
             <p className="mb-2">Zona 04 - Maringá - PR</p>
             <p>CEP 87.140-200</p>
