@@ -33,7 +33,7 @@ const plans = [
   },
   {
     tier: 'Custom',
-    price: '200 - 2000+',
+    price: 'Customizável',
     color: '#FF4000',
     features: [
       'Soluções sob medida para grandes usinas ou portfólios',
@@ -48,7 +48,6 @@ const plans = [
   }
 ];
 
-
 type Plan = {
   tier: string;
   price: string;
@@ -61,48 +60,53 @@ type Plan = {
 
 const PlanCard = ({ plan }: { plan: Plan }) => (
   <motion.div 
-    className="relative p-8 rounded-2xl border border-[rgba(42,54,65,0.3)] backdrop-blur-lg bg-[rgba(16,27,35,0.6)] shadow-xl"
+    className="relative flex flex-col h-full p-8 rounded-2xl border border-[rgba(42,54,65,0.3)] bg-[rgba(16,27,35,0.6)] shadow-xl"
     whileHover={{ y: -10, scale: 1.02 }}
     transition={{ type: 'spring', stiffness: 300 }}
   >
     {plan.popular && (
       <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[rgba(224,26,79,0.9)] text-white px-4 py-1 rounded-full text-sm font-medium backdrop-blur-sm"
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[rgba(224,26,79,0.9)] text-white px-4 py-1 rounded-full text-sm font-medium"
         style={{ boxShadow: `0 4px 20px -5px ${plan.color}80` }}
       >
         Mais Popular
       </div>
     )}
     
-      <div className="flex flex-col items-center text-center mb-8">
-        <plan.icon 
-          className="text-4xl mb-4 drop-shadow-md" 
-          style={{ color: plan.color }}
-        />
-        <h3 className="text-2xl font-bold text-[rgba(220,229,244,0.9)] mb-2">{plan.tier}</h3>
-        <div className="flex flex-col items-center">
-          <span className="text-sm font-medium text-[rgba(117,118,124,0.8)]">A partir de</span>
-          <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-bold drop-shadow-md" style={{ color: plan.color }}>
-              R${plan.price}
-            </span>
-            <span className="text-sm text-[rgba(117,118,124,0.8)]">/mês</span>
-          </div>
-        </div>
+    <div className="flex flex-col items-center text-center mb-8">
+      <plan.icon 
+        className="text-4xl mb-4 drop-shadow-md" 
+        style={{ color: plan.color }}
+      />
+      <h3 className="text-2xl font-bold text-[rgba(220,229,244,0.9)] mb-2">{plan.tier}</h3>
+      <div className="flex flex-col items-center">
+        {plan.tier === 'Custom' ? (
+          <div className="text-sm text-[rgba(117,118,124,0.8)]">Sob consulta</div>
+        ) : (
+          <>
+            <span className="text-sm font-medium text-[rgba(117,118,124,0.8)]">A partir de</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-4xl font-bold" style={{ color: plan.color }}>
+                R${plan.price}
+              </span>
+              <span className="text-sm text-[rgba(117,118,124,0.8)]">/mês</span>
+            </div>
+          </>
+        )}
       </div>
+    </div>
 
-
-    <ul className="space-y-4 mb-8">
+    <ul className="space-y-4 mb-8 flex-grow">
       {plan.features.map((feature, idx) => (
         <li key={idx} className="flex items-center gap-3 text-[rgba(220,229,244,0.9)]">
-          <FiCheck className="text-[#09BC8A] shrink-0 drop-shadow-md" />
+          <FiCheck className="text-[#09BC8A] shrink-0" />
           <span className="text-sm">{feature}</span>
         </li>
       ))}
     </ul>
 
     <motion.button
-      className="w-full py-3 rounded-lg font-semibold transition-all border border-[rgba(255,255,255,0.1)]"
+      className="w-full py-3 rounded-lg font-semibold transition-all border border-[rgba(255,255,255,0.1)] mt-auto"
       style={{
         backgroundColor: `${plan.color}CC`,
         color: '#FFFFFF'
