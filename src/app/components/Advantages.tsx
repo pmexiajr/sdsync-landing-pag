@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 import {
   BoltIcon,
   CloudIcon,
@@ -8,10 +9,26 @@ import {
   ChartBarIcon,
   ChatBubbleBottomCenterTextIcon,
   XMarkIcon,
+  CalendarIcon,
+  PhoneIcon,
+  UserIcon,
+  EnvelopeIcon,
+  BuildingOfficeIcon
 } from "@heroicons/react/24/outline";
 
 const Advantages = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    date: '',
+    message: ''
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleImageClick = (imageSrc: string) => {
     setSelectedImage(imageSrc);
@@ -21,9 +38,54 @@ const Advantages = () => {
     setSelectedImage(null);
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+    setErrorMessage('');
+
+    try {
+      await emailjs.send(
+        'service_38lfzb8',
+        'template_oqhy2cq',
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          date: formData.date,
+          message: formData.message
+        },
+        'Ik63F9w4Ivfj49xlh'
+      );
+
+      alert('Demonstração agendada com sucesso! Entraremos em contato em breve.');
+      setShowForm(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        date: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Erro ao enviar:', error);
+      setErrorMessage('Erro ao enviar o formulário. Por favor, tente novamente.');
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section className="py-6" style={{ backgroundColor: '#153243' }}>
-      {/* Modal de Imagem Ampliada */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
@@ -44,8 +106,131 @@ const Advantages = () => {
         </div>
       )}
 
-      <div className="flex flex-col lg:flex-row items-center justify-start py-12 px-6 lg:py-24 lg:px-12 max-w-7xl mx-auto gap-8">
-        
+      {showForm && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#153243] border border-[#2A3641] rounded-2xl p-8 max-w-md w-full relative">
+            <button 
+              onClick={() => setShowForm(false)}
+              className="absolute top-4 right-4 text-[#9FB3C8] hover:text-[#DCE5F4]"
+            >
+              <XMarkIcon className="h-6 w-6" />
+            </button>
+            
+            <h3 className="text-2xl font-bold text-[#DCE5F4] mb-6">Agendar Demonstração</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <UserIcon className="h-5 w-5 text-[#9FB3C8]" />
+                </div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Seu nome completo"
+                  className="w-full pl-10 pr-4 py-3 bg-[#101B23] border border-[#2A3641] rounded-lg text-[#DCE5F4] placeholder-[#5E6E7A] focus:outline-none focus:ring-2 focus:ring-[#FF4000]"
+                  required
+                />
+              </div>
+
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <EnvelopeIcon className="h-5 w-5 text-[#9FB3C8]" />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Seu e-mail"
+                  className="w-full pl-10 pr-4 py-3 bg-[#101B23] border border-[#2A3641] rounded-lg text-[#DCE5F4] placeholder-[#5E6E7A] focus:outline-none focus:ring-2 focus:ring-[#FF4000]"
+                  required
+                />
+              </div>
+
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <PhoneIcon className="h-5 w-5 text-[#9FB3C8]" />
+                </div>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  placeholder="Seu telefone"
+                  className="w-full pl-10 pr-4 py-3 bg-[#101B23] border border-[#2A3641] rounded-lg text-[#DCE5F4] placeholder-[#5E6E7A] focus:outline-none focus:ring-2 focus:ring-[#FF4000]"
+                  required
+                />
+              </div>
+
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <BuildingOfficeIcon className="h-5 w-5 text-[#9FB3C8]" />
+                </div>
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  placeholder="Sua empresa"
+                  className="w-full pl-10 pr-4 py-3 bg-[#101B23] border border-[#2A3641] rounded-lg text-[#DCE5F4] placeholder-[#5E6E7A] focus:outline-none focus:ring-2 focus:ring-[#FF4000]"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <p className="text-sm text-[#9FB3C8]">Informe a data e horário que você está disponível para uma reunião</p>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <CalendarIcon className="h-5 w-5 text-[#9FB3C8]" />
+                  </div>
+                  <input
+                    type="datetime-local"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleInputChange}
+                    className="w-full pl-10 pr-4 py-3 bg-[#101B23] border border-[#2A3641] rounded-lg text-[#DCE5F4] placeholder-[#5E6E7A] focus:outline-none focus:ring-2 focus:ring-[#FF4000]"
+                    required
+                  />
+                </div>
+              </div>
+
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="Alguma informação adicional que devemos saber?"
+                rows={3}
+                className="w-full px-4 py-3 bg-[#101B23] border border-[#2A3641] rounded-lg text-[#DCE5F4] placeholder-[#5E6E7A] focus:outline-none focus:ring-2 focus:ring-[#FF4000]"
+              ></textarea>
+
+              {errorMessage && (
+                <p className="text-red-400 text-sm">{errorMessage}</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSending}
+                className="w-full bg-[#FF4000] hover:bg-[#E01A4F] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 disabled:opacity-70 flex items-center justify-center gap-2"
+              >
+                {isSending ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Enviando...
+                  </>
+                ) : (
+                  'Confirmar Agendamento'
+                )}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      <div className="flex flex-col lg:flex-row items-center justify-start py-12 px-6 lg:py-2 lg:px-12 max-w-7xl mx-auto gap-8">
         <div className="w-full lg:w-[55%] space-y-4">
           <div 
             className="group relative h-64 lg:h-[50vh] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all cursor-zoom-in"
@@ -162,9 +347,13 @@ const Advantages = () => {
                 Quer ver sua usina operando com máxima eficiência?
               </h3>
               <p className="text-lg text-[#9FB3C8] mb-6">
-                Fale com nosso time e descubra como ativar o monitoramento SDSync
+                Agende uma demonstração personalizada com nosso time
               </p>
-              <button className="bg-[#FF4000] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#E01A4F] transition-colors">
+              <button 
+                onClick={() => setShowForm(true)}
+                className="bg-[#FF4000] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#E01A4F] transition-colors flex items-center justify-center gap-2 mx-auto lg:mx-0"
+              >
+                <CalendarIcon className="h-5 w-5" />
                 Agendar Demonstração
               </button>
             </div>

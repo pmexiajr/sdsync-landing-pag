@@ -7,14 +7,11 @@ const Presentation = () => {
       {/* Texto */}
       <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl text-left flex flex-col w-full order-2 lg:order-1">
         <h1 className="font-poppins font-bold text-[40px] leading-[56px] text-[#101B23] mb-4">
-          Revolucionando o Monitoramento Solar com o 
-          <span className="text-[#E01A4F]"> SDSync</span>
+         Insights Acionáveis para Tomadas de Decisão Estratégicas 
         </h1>
         
         <p className="font-poppins text-[18px] font-normal leading-[28px] text-[#75767C] mt-2 mb-6">
-          Plataforma inteligente que transforma dados em insights acionáveis para 
-          usinas solares. Monitoramento contínuo de todos os componentes-chave 
-          com análise preditiva e alertas em tempo real.
+A SDSync é uma plataforma de monitoramento contínuo que coleta e processa dados operacionais de inversores, sensores ambientais e demais ativos da usina. Utilizando algoritmos de inteligência artificial, o sistema identifica padrões de comportamento, detecta desvios operacionais e sugere ações corretivas com base em parâmetros técnicos consolidados. Tudo isso é apresentado em dashboards analíticos, que facilitam decisões estratégicas, manutenção preventiva e otimização da performance energética.
         </p>
 
         <div className="mt-6 border-l-4 border-[#09BC8A] pl-4">
@@ -25,7 +22,7 @@ const Presentation = () => {
 
         <div className="mt-8 pt-6 border-t-2 border-[#DCE5F4]">
           <p className="font-poppins text-[20px] font-medium leading-[32px] text-[#4494D5]">
-            Controle total sobre o desempenho da sua usina
+           Tenha controle total sobre o desempenho da sua usina.
           </p>
         </div>
       </div>

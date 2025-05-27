@@ -47,12 +47,11 @@ export default function Home() {
             >
               SmartDataSync – SDSync 
             </a>
-            <span className="block mt-4">é uma plataforma de monitoramento de desempenho para parques solares</span>
+            <span className="block mt-4">Plataforma de Monitoramente de Desempenho para Parques Solares.</span>
           </h1>
           
           <h2 className="mt-6 text-xl text-[#75767C] font-medium leading-6 max-w-4xl mx-auto tracking-wide">
-            Monitoramento em tempo real dos principais ativos das usinas solares com análise preditiva, 
-            detecção de falhas e otimização contínua do ROI através de inteligência de dados avançada.
+            O SDSync é uma plataforma especializada no monitoramento contínuo de ativos críticos em usinas solares. Com inteligência de dados, alertas automatizados e recursos preditivos, apoiamos integradores, operadores e investidores a maximizar o retorno sobre o investimento (ROI), otimizando o desempenho dos ativos e reduzindo falhas de forma proativa.
           </h2>
 
           <div className="mt-8 border-b-2 border-[#09BC8A] w-24 mx-auto"></div>

@@ -1,61 +1,72 @@
 'use client'
 
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { FaLinkedin } from "react-icons/fa";
+import { FiCheckCircle, FiXCircle, FiMail } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setErrorMessage("Por favor, insira um e-mail válido.");
       return;
     }
-
     setIsModalOpen(true);
+    setErrorMessage("");
   };
 
-  const handleSendEmail = () => {
+  const handleSendEmail = async () => {
     if (!message.trim()) {
       setErrorMessage("Por favor, insira uma mensagem.");
       return;
     }
 
-    const templateParams = {
-      to_email: "paulino.mexiajr@mextech.com.br",
-      from_email: email,
-      from_name: email,
-      message: message,
-    };
+    setIsSending(true);
+    setErrorMessage("");
 
-    emailjs
-      .send(
-        "service_0vo94vf",
-        "template_a123q4e",
-        templateParams,
-        "QA2x3lV2DJbmq8PlX"
-      )
-      .then(
-        (response) => {
-          console.log("E-mail enviado com sucesso:", response);
-          alert("E-mail enviado com sucesso!");
-          setEmail("");
-          setMessage("");
-          setErrorMessage("");
-          setIsModalOpen(false);
+    try {
+      await emailjs.send(
+        "service_38lfzb8",
+        "template_ms3823c",
+        {
+          to_email: "paulino.mexiajr@mextech.com.br",
+          from_email: email,
+          from_name: email.split('@')[0] || "Usuário",
+          message: message,
+          reply_to: email
         },
-        (error) => {
-          console.log("Erro ao enviar e-mail:", error);
-          setErrorMessage("Erro ao enviar o e-mail. Tente novamente.");
-        }
+        "Ik63F9w4Ivfj49xlh"
       );
+
+      setIsSuccess(true);
+      setTimeout(() => {
+        setIsModalOpen(false);
+        setIsSuccess(false);
+        setEmail("");
+        setMessage("");
+      }, 2000);
+    } catch (error) {
+      console.error("Erro ao enviar e-mail:", error);
+      setErrorMessage("Serviço de e-mail temporariamente indisponível. Por favor, tente novamente mais tarde.");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setErrorMessage("");
+    if (!isSuccess) setMessage("");
   };
 
   return (
@@ -121,23 +132,38 @@ export default function Footer() {
 
         <div>
           <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Envie uma mensagem</h5>
-          <form onSubmit={handleSubmit} className="flex flex-row gap-2">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Seu e-mail"
-              className="flex-grow px-4 py-2 border border-[#DCE5F4]/50 rounded-lg focus:ring-2 focus:ring-[#FF4000] text-[#153243]"
-              required
-            />
-            <button
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <FiMail className="text-[#9FB3C8]" />
+              </div>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Seu e-mail"
+                className="w-full pl-10 pr-4 py-3 border border-[#DCE5F4]/50 rounded-lg focus:ring-2 focus:ring-[#FF4000] focus:outline-none bg-[#101B23] text-[#DCE5F4] placeholder-[#9FB3C8]/50"
+                required
+              />
+            </div>
+            <motion.button
               type="submit"
-              className="px-6 py-2 bg-[#FF4000] text-[#DCE5F4] rounded-lg hover:bg-[#FF4000]/90 transition-colors whitespace-nowrap"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 py-3 bg-gradient-to-r from-[#FF4000] to-[#E01A4F] text-[#DCE5F4] rounded-lg hover:opacity-90 transition-all font-medium shadow-lg flex items-center justify-center gap-2"
             >
-              Enviar
-            </button>
+              <FiMail /> Enviar
+            </motion.button>
           </form>
-          {errorMessage && <p className="text-[#FF4000] mt-2 text-sm">{errorMessage}</p>}
+          {errorMessage && (
+            <motion.p 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-[#FF6B6B] mt-2 text-sm flex items-center gap-1"
+            >
+              <FiXCircle /> {errorMessage}
+            </motion.p>
+          )}
         </div>
       </div>
 
@@ -148,33 +174,73 @@ export default function Footer() {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-[#101B23]/90 z-50">
-          <div className="bg-[#DCE5F4] p-6 rounded-lg shadow-lg w-full max-w-md mx-4">
-            <h2 className="text-xl font-bold mb-4 text-[#101B23]">Sua mensagem</h2>
-            <p className="text-[#101B23]/80 mb-2">Deixe sua mensagem para nossa equipe:</p>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="w-full p-3 border border-[#75767C] rounded-lg text-[#101B23] focus:ring-2 focus:ring-[#FF4000]"
-              rows={5}
-              placeholder="Escreva aqui sua mensagem..."
-              required
-            ></textarea>
-            <div className="flex justify-end mt-4 gap-3">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="px-4 py-2 bg-[#75767C] text-[#DCE5F4] rounded-lg hover:bg-[#5E6066] transition-colors"
-              >
-                Cancelar
-              </button>
-              <button
-                onClick={handleSendEmail}
-                className="px-4 py-2 bg-[#09BC8A] text-[#101B23] rounded-lg hover:bg-[#07A076] transition-colors"
-              >
-                Enviar mensagem
-              </button>
-            </div>
-          </div>
+        <div className="fixed inset-0 flex items-center justify-center bg-[#101B23]/90 z-50 backdrop-blur-sm">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-[#153243] p-6 rounded-lg shadow-xl border border-[#2A3641] w-full max-w-md mx-4"
+          >
+            {isSuccess ? (
+              <div className="text-center py-8">
+                <FiCheckCircle className="text-[#09BC8A] text-5xl mx-auto mb-4" />
+                <h2 className="text-xl font-bold mb-2 text-[#DCE5F4]">Mensagem enviada!</h2>
+                <p className="text-[#9FB3C8]">Obrigado pelo seu contato. Retornaremos em breve.</p>
+              </div>
+            ) : (
+              <>
+                <h2 className="text-xl font-bold mb-4 text-[#DCE5F4]">Sua mensagem</h2>
+                <p className="text-[#9FB3C8] mb-4">Deixe sua mensagem para nossa equipe:</p>
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full p-3 border border-[#2A3641] rounded-lg text-[#DCE5F4] bg-[#101B23] focus:ring-2 focus:ring-[#FF4000] focus:outline-none placeholder-[#9FB3C8]/50"
+                  rows={5}
+                  placeholder="Escreva aqui sua mensagem..."
+                  required
+                ></textarea>
+                
+                {errorMessage && (
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-[#FF6B6B] mt-2 text-sm flex items-center gap-1"
+                  >
+                    <FiXCircle /> {errorMessage}
+                  </motion.p>
+                )}
+
+                <div className="flex justify-end mt-6 gap-3">
+                  <motion.button
+                    onClick={closeModal}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-5 py-2.5 bg-[#2A3641] text-[#DCE5F4] rounded-lg hover:bg-[#3A4A58] transition-colors font-medium"
+                  >
+                    Cancelar
+                  </motion.button>
+                  <motion.button
+                    onClick={handleSendEmail}
+                    disabled={isSending}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-5 py-2.5 bg-gradient-to-r from-[#09BC8A] to-[#07A076] text-[#153243] rounded-lg hover:opacity-90 transition-opacity font-medium disabled:opacity-70 flex items-center gap-2"
+                  >
+                    {isSending ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Enviando...
+                      </>
+                    ) : (
+                      "Enviar mensagem"
+                    )}
+                  </motion.button>
+                </div>
+              </>
+            )}
+          </motion.div>
         </div>
       )}
     </footer>
