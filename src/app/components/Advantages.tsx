@@ -259,7 +259,7 @@ const Advantages = () => {
         <div className="w-full lg:w-[55%] space-y-4">
           <div
             className="group relative h-64 lg:h-[50vh] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all cursor-zoom-in"
-            onClick={() => handleImageClick("/Solar.jpg")}
+            onClick={() => handleImageClick("/Inverters.jpg")}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
             <div className="absolute bottom-6 left-6 text-white z-20">
