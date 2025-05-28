@@ -70,7 +70,7 @@ export default function AboutUs() {
           >
             <div className="absolute inset-0">
               <Image
-                src="/Solar.jpg"
+                src="/aboutus.png"
                 alt="Usina solar monitorada pela SDSync"
                 fill
                 className="object-cover"

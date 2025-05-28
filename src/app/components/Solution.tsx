@@ -38,7 +38,7 @@ export default function Solution() {
     {
       title: "Indicadores de Desempenho",
       description: "Métricas de potência e eficiência energética",
-      image: "/solarsas.jpg",
+      image: "/dashpereira .png",
       expandedDescription: "Painel de indicadores críticos:\n- Potência ativa instantânea\n- Rendimento (Yield: esperado vs. real)\n- Fator de capacidade e índice de desempenho\n- Metas de geração (projeção vs. entrega)",
       tags: [
         { name: "Potência", colorHex: "#D84315" },
@@ -48,7 +48,7 @@ export default function Solution() {
     {
       title: "Eventos e Alarmes",
       description: "Detecção de falhas e notificações automáticas",
-      image: "/solarsas.jpg",
+      image: "/card lateral.png",
       expandedDescription: "Monitoramento em tempo real com:\n- Detecção de falhas operacionais\n- Alertas via WhatsApp e histórico de alarmes\n- Classificação de anomalias por criticidade",
       tags: [
         { name: "Alertas", colorHex: "#C62828" },
@@ -82,15 +82,15 @@ export default function Solution() {
 
           <div className="grid md:grid-cols-3 gap-8 pt-8">
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
-              <ShieldCheckIcon className="h-12 w-12 mx-auto text-[#09BC8A]" />
+              <ShieldCheckIcon className="h-12 w-12 mx-auto text-[#4494D5]" />
               <h3 className="text-2xl font-semibold text-[#DCE5F4] mt-4">Segurança Total</h3>
-              <p className="text-[#9FB3C8] mt-2">Monitoramento 24/7 de equipamentos críticos</p>
+              <p className="text-[#9FB3C8] mt-2">Monitoramento 24/7 com alertas de falha</p>
             </div>
             
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
               <FaWhatsapp className="h-12 w-12 mx-auto text-[#25D366]" />
               <h3 className="text-2xl font-semibold text-[#DCE5F4] mt-4">WhatsApp</h3>
-              <p className="text-[#9FB3C8] mt-2">Receba análises diárias de geração e rendimento diretamente</p>
+              <p className="text-[#9FB3C8] mt-2">Receba indicadores de geração e desempenho diariamente</p>
             </div>
 
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
@@ -103,8 +103,7 @@ export default function Solution() {
 
         <div className="mt-12 text-center">
           <p className="text-lg font-medium italic text-[#9FB3C8]">
-            &quot;Relatórios diários automáticos no 
-            <span className="text-[#09BC8A]"> WhatsApp</span> - 
+            &quot;Relatórios diários automáticos 
             <span className="block mt-1 text-base">Simples, rápido e eficiente&quot;</span>
           </p>
         </div>

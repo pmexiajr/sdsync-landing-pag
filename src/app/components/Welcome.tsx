@@ -64,9 +64,13 @@ export default function WelcomePage() {
             </h1>
             
             <div className="space-y-4">
+              <h2>
+                <span className="text-2xl md:text-3xl font-semibold text-[#DCE5F4]">
+                  Controle Total e Eficiência para Usinas Solares GD
+                </span>
+              </h2>
               <p className="text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto md:mx-0">
-                  Monitoramento de Usinas GD com Alertas Automatizados
-                  Plataforma SaaS com alertas diários via WhatsApp, compatível com diversos inversores.<br></br>Detecte falhas, visualize performance e otimize seus resultados — tudo sem a necessidade de infraestrutura local.
+Solução SaaS com monitoramento contínuo, alertas automatizados via WhatsApp e indicadores estratégicos para maximizar desempenho e retorno sobre o investimento. 
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">

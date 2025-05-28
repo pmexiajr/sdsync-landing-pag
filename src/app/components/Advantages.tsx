@@ -276,7 +276,7 @@ const Advantages = () => {
           <div className="grid grid-cols-2 gap-4">
             <div
               className="group relative h-48 lg:h-[30vh] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-zoom-in"
-              onClick={() => handleImageClick("/insights.png")}
+              onClick={() => handleImageClick("/component.png")}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
               <div className="absolute bottom-4 left-4 text-white z-20">
@@ -284,7 +284,7 @@ const Advantages = () => {
                 <p className="text-xs lg:text-sm opacity-90 mt-1">Visualização completa de todos os indicadores-chave</p>
               </div>
               <Image
-                src="/insights.png"
+                src="/component.png"
                 alt="Dashboard de monitoramento"
                 fill
                 className="object-cover"
