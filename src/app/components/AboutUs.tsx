@@ -18,7 +18,7 @@ export default function AboutUs() {
             Sobre o SDSync
           </h1>
           <p className="text-3xl text-[#101B23] font-medium max-w-3xl mx-auto leading-snug">
-            Transformando dados energéticos em decisões estratégicas para<br className="hidden md:block" /> maximizar investimentos em energia solar
+            Transformando dados energéticos em decisões estratégicas para maximizar investimentos em energia solar
           </p>
         </motion.div>
 
@@ -63,43 +63,52 @@ export default function AboutUs() {
             </motion.div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="relative h-[800px] rounded-[2rem] overflow-hidden"
-          >
-            <div className="absolute inset-0">
-              <Image
-                src="/aboutus.png"
-                alt="Usina solar monitorada pela SDSync"
-                fill
-                className="object-cover"
-                quality={100}
-              />
+<motion.div
+  initial={{ opacity: 0, x: 50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  className="relative h-[800px] rounded-[2rem] overflow-hidden group"
+>
+  <div className="absolute inset-0">
+    <Image
+      src="/aboutus.png"
+      alt="Usina solar monitorada pela SDSync"
+      fill
+      className="object-cover"
+      quality={100}
+    />
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{
+        backgroundImage: 'url("/paineis.jpg")',
+        mixBlendMode: 'multiply'
+      }}
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-[#101B23]/60 to-transparent" />
+  </div>
 
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: 'url("/paineis.jpg")',
-                  mixBlendMode: 'multiply'
-                }}
-              />
-
-
-              <div className="absolute inset-0 bg-gradient-to-t from-[#101B23]/60 to-transparent" />
-            </div>
-
-            <div className="relative h-full flex items-center justify-center">
-              <div className="text-center space-y-6 p-10 text-white">
-                <div className="inline-block bg-[#09BC8A] text-white px-8 py-3 rounded-full text-base font-medium shadow-lg mb-8">
-                  Inovação que Impulsiona
-                </div>
-                <h3 className="text-4xl font-bold leading-tight max-w-[500px] mx-auto">
-                  Da engenharia industrial à liderança em energia solar inteligente
-                </h3>
-              </div>
-            </div>
-          </motion.div>
+  <div className="relative h-full flex items-center justify-center">
+    <div className="text-center space-y-6 p-10 text-white">
+      <div className="
+        inline-block bg-[#09BC8A] text-white px-8 py-3 rounded-full 
+        text-base font-medium shadow-lg mb-8
+        opacity-0 group-hover:opacity-100 
+        transition-all duration-500 ease-out
+        transform translate-y-4 group-hover:translate-y-0
+      ">
+        Inovação que Impulsiona
+      </div>
+      
+      <h3 className="
+        text-4xl font-bold leading-tight max-w-[500px] mx-auto
+        opacity-10 group-hover:opacity-100
+        transition-all duration-700 ease-out
+        transform translate-y-8 group-hover:translate-y-0
+      ">
+        Da engenharia industrial à liderança em energia solar inteligente
+      </h3>
+    </div>
+  </div>
+</motion.div>
 
         </div>
 <div className="space-y-8">

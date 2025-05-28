@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    tier: 'Lite',
+    tier: 'First Light',
     price: '100',
     color: '#09BC8A',
     features: [
@@ -14,10 +14,10 @@ const plans = [
       'Ideal para visibilidade básica e alertas rápidos'
     ],
     icon: FiZap,
-    cta: 'Começar Agora'
+    cta: 'Primeiro Passo'
   },
   {
-    tier: 'Premium',
+    tier: 'Zenith',
     price: '400',
     color: '#E01A4F',
     features: [
@@ -28,7 +28,7 @@ const plans = [
       'Alertas inteligentes (ex: perda de geração, falha recorrente, PR abaixo da meta)'
     ],
     icon: FiStar,
-    cta: 'Assinar Premium',
+    cta: 'Maximizar Performance',
     popular: true
   },
   {

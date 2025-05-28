@@ -27,11 +27,10 @@ A SDSync é uma plataforma de monitoramento contínuo que coleta e processa dado
         </div>
       </div>
 
-      {/* Container de Imagens Aprimorado */}
       <div className="relative w-full max-w-2xl order-1 lg:order-2 group">
         <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 z-10">
           <Image
-            src="/sdsyncfull.png"
+            src="/sdsyncfullscr.png"
             alt="Monitoramento de usina solar"
             fill
             className="object-cover hover:scale-105 transition-transform duration-300"
@@ -42,7 +41,7 @@ A SDSync é uma plataforma de monitoramento contínuo que coleta e processa dado
         
         <div className="hidden lg:block absolute -right-10 -top-10 w-[55%] h-[55%] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#FF4000]/20 hover:border-[#FF4000] z-20 transition-all duration-300">
           <Image
-            src="/automacao.jpg"
+            src="/usina.jpg"
             alt="Detalhe do sistema de monitoramento"
             fill
             className="object-cover hover:scale-110 transition-transform duration-300"
