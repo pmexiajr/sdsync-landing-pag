@@ -267,7 +267,7 @@ const Advantages = () => {
               <p className="text-base lg:text-lg opacity-90 mt-2">Dados precisos e atualizações em tempo real</p>
             </div>
             <Image
-              src="/Solar.jpg"
+              src="/Inverters.png"
               alt="Usina solar monitorada"
               fill
               className="object-cover object-center"
