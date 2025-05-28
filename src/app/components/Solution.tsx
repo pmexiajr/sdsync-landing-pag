@@ -28,7 +28,7 @@ export default function Solution() {
     {
       title: "Análise Ambiental e Previsão",
       description: "Monitoramento de irradiação e clima integrado",
-      image: "/solarsas.jpg",
+      image: "/irradiação.png",
       expandedDescription: "Sistema de análise ambiental com:\n- Medição de irradiação solar e temperatura\n- Previsão meteorológica integrada\n- Correlação em tempo real entre condições climáticas e geração de energia",
       tags: [
         { name: "Clima", colorHex: "#2D7D9A" },
@@ -48,7 +48,7 @@ export default function Solution() {
     {
       title: "Eventos e Alarmes",
       description: "Detecção de falhas e notificações automáticas",
-      image: "/card lateral.png",
+      image: "/analitcs.png",
       expandedDescription: "Monitoramento em tempo real com:\n- Detecção de falhas operacionais\n- Alertas via WhatsApp e histórico de alarmes\n- Classificação de anomalias por criticidade",
       tags: [
         { name: "Alertas", colorHex: "#C62828" },
@@ -144,18 +144,20 @@ export default function Solution() {
                 <div key={index} className="group relative transform transition-all duration-500 hover:-translate-y-1">
                   <div className="bg-white rounded-2xl shadow-xl h-full flex flex-col overflow-hidden border-1 border-transparent hover:border-[#FF4000]/10 transition-all">
                     <div 
-                      className="relative h-56 overflow-hidden rounded-t-2xl cursor-zoom-in"
+                      className="relative h-56 overflow-hidden rounded-t-2xl cursor-zoom-in "
                       onClick={() => handleImageClick(feature.image)}
                     >
                       <Image
                         src={feature.image}
                         alt="Imagem do Card"
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105 "
                       />
                       <div className="absolute bottom-4 left-4 text-white space-y-1">
-                        <h3 className="text-xl font-bold">{feature.title}</h3>
-                        <p className="text-sm opacity-0 translate-y-2 group-hover:translate-y-0 group-hover:opacity-80 transition-all duration-500">
+                        <h3 className="text-xl font-bold [text-shadow:_0_1px_3px_rgba(0,0,0,0.8)]">
+                          {feature.title}
+                        </h3>
+                        <p className="text-sm opacity-0 translate-y-2 group-hover:translate-y-0 group-hover:opacity-80 transition-all duration-500 [text-shadow:_0_1px_2px_rgba(0,0,0,0.8)]">
                           {feature.description}
                         </p>
                       </div>

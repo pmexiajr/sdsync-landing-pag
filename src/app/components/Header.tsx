@@ -63,7 +63,7 @@ export default function Header() {
           </div>
           
           <PopoverGroup className="hidden lg:flex lg:gap-x-8 lg:items-center">
-            <a href="#solution" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
+            <a href="#Explain" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
               Solução
             </a>
             <a href="#Advantages" className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors">
