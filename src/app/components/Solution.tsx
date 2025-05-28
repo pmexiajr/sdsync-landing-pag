@@ -48,7 +48,7 @@ export default function Solution() {
     {
       title: "Eventos e Alarmes",
       description: "Detecção de falhas e notificações automáticas",
-      image: "/analitcs.png",
+      image: "/alarme.png",
       expandedDescription: "Monitoramento em tempo real com:\n- Detecção de falhas operacionais\n- Alertas via WhatsApp e histórico de alarmes\n- Classificação de anomalias por criticidade",
       tags: [
         { name: "Alertas", colorHex: "#C62828" },
