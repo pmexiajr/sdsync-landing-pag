@@ -30,7 +30,7 @@ A SDSync é uma plataforma de monitoramento contínuo que coleta e processa dado
       <div className="relative w-full max-w-2xl order-1 lg:order-2 group">
         <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 z-10">
           <Image
-            src="/sdsyncfullscr.png"
+            src="/sdsync.png"
             alt="Monitoramento de usina solar"
             fill
             className="object-cover hover:scale-105 transition-transform duration-300"
