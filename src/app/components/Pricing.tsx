@@ -3,28 +3,28 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    tier: 'First Light',
+    tier: 'Monitoramento Operacional ',
     price: '100',
     color: '#09BC8A',
     features: [
-      'Notificações diárias via WhatsApp com indicadores essenciais',
-      'Relatório mensal de desempenho',
-      'Acompanhamento de energia gerada e potência ativa',
+      'Atualizações de geração em tempo real',
+      'Alertas operacionais automáticos',
+      'Acesso remoto à plataforma',
       'Sem necessidade de infraestrutura local',
-      'Ideal para visibilidade básica e alertas rápidos'
+      'Indicadores principais de desempenho'
     ],
     icon: FiZap,
     cta: 'Primeiro Passo'
   },
   {
-    tier: 'Zenith',
+    tier: 'Monitoramento Avançado ',
     price: '400',
     color: '#E01A4F',
     features: [
-      'Inclui todos os recursos do Lite +',
-      'Dashboard com acesso completo aos dados históricos',
-      'KPIs detalhados (PR, Irradiação, Disponibilidade, Fator de Capacidade)',
-      'Análise comparativa entre inversores e strings',
+      'Indicadores completos de performance (PR, disponibilidade, yield)',
+      'Histórico de dados e análises comparativas ',
+      'Alertas inteligentes configuráveis',
+      'Monitoramento por inversor e string',
       'Alertas inteligentes (ex: perda de geração, falha recorrente, PR abaixo da meta)'
     ],
     icon: FiStar,
@@ -32,16 +32,15 @@ const plans = [
     popular: true
   },
   {
-    tier: 'Custom',
-    price: 'Customizável',
+    tier: 'Gestão Estratégica de Performance ',
+    price: 'Custom',
     color: '#FF4000',
     features: [
-      'Soluções sob medida para grandes usinas ou portfólios',
-      'Relatórios e análises personalizadas por projeto',
-      'Suporte estratégico com equipe dedicada',
-      'Numero de Dispositivos e plantas customizável',
+      'Consolidação de múltiplas usinas',
+      'Dashboards analíticos avançados',
+      'Relatórios técnicos detalhados',
+      'Suporte técnico especializado',
       'Armazenamento de dados e backup customizados',
-      'SLA personalizado e consultoria contínua'
     ],
     icon: FiSettings,
     cta: 'Falar com Especialista'
@@ -130,7 +129,7 @@ export default function PricingSection() {
             Solução Completa para Gestão Energética
           </h2>
           <p className="text-[#8A9BA8] max-w-2xl mx-auto">
-            Escolha o plano ideal para otimizar o desempenho do seu parque solar com nossa plataforma inteligente
+            A SDSync oferece uma estrutura completa de monitoramento e análise para diferentes níveis de operação solar, dimensionada conforme a potência instalada e a complexidade da usina. 
           </p>
         </div>
 

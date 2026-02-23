@@ -264,7 +264,7 @@ const Advantages = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
             <div className="absolute bottom-6 left-6 text-white z-20">
               <h3 className="text-2xl lg:text-3xl font-bold">Monitoramento Inteligente</h3>
-              <p className="text-base lg:text-lg opacity-90 mt-2">Dados precisos e atualizações em tempo real</p>
+              <p className="text-base lg:text-lg opacity-90 mt-2">Dashboards analíticos com dados estruturados e visões personalizáveis</p>
             </div>
             <Image
               src="/Inverters.png"
@@ -281,7 +281,7 @@ const Advantages = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
               <div className="absolute bottom-4 left-4 text-white z-20">
                 <h3 className="text-lg font-semibold">Componentes Modernos</h3>
-                <p className="text-xs lg:text-sm opacity-90 mt-1">Visualização completa de todos os indicadores-chave</p>
+                <p className="text-xs lg:text-sm opacity-90 mt-1">Visualização completa dos principais indicadores de desempenho</p>
               </div>
               <Image
                 src="/component.png"
@@ -297,7 +297,7 @@ const Advantages = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
               <div className="absolute bottom-4 left-4 text-white z-20">
                 <h3 className="text-lg font-semibold">Monitoramento de Inversores</h3>
-                <p className="text-xs lg:text-sm opacity-90 mt-1">Compatível com principais marcas do mercado</p>
+                <p className="text-xs lg:text-sm opacity-90 mt-1">Compatível com as principais marcas do mercado </p>
               </div>
               <Image
                 src="/inversores.jpg"
@@ -325,7 +325,7 @@ const Advantages = () => {
                 <CloudIcon className="h-7 w-7 flex-shrink-0 text-[#09BC8A]" />
                 <div>
                   <h3 className="text-xl font-semibold text-[#DCE5F4]">Zero Infraestrutura</h3>
-                  <p className="mt-1">Plataforma 100% SaaS - Sem instalação local</p>
+                  <p className="mt-1">Plataforma 100% SaaS, sem necessidade de instalação local </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -339,21 +339,21 @@ const Advantages = () => {
                 <CpuChipIcon className="h-7 w-7 flex-shrink-0 text-[#09BC8A]" />
                 <div>
                   <h3 className="text-xl font-semibold text-[#DCE5F4]">Compatibilidade Total</h3>
-                  <p className="mt-1">Integração com principais marcas de inversores</p>
+                  <p className="mt-1">Integração com as principais marcas de inversores </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <ChartBarIcon className="h-7 w-7 flex-shrink-0 text-[#09BC8A]" />
                 <div>
                   <h3 className="text-xl font-semibold text-[#DCE5F4]">Performance Completa</h3>
-                  <p className="mt-1">Dashboards com todos os indicadores-chave</p>
+                  <p className="mt-1">Dashboards com os principais indicadores de desempenho </p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <ChatBubbleBottomCenterTextIcon className="h-7 w-7 flex-shrink-0 text-[#09BC8A]" />
                 <div>
                   <h3 className="text-xl font-semibold text-[#DCE5F4]">Comunicação Direta</h3>
-                  <p className="mt-1">Alertas e relatórios automáticos via WhatsApp</p>
+                  <p className="mt-1">Alertas e atualizações automáticas via WhatsApp </p>
                 </div>
               </div>
             </div>

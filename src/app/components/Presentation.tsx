@@ -10,19 +10,29 @@ const Presentation = () => {
          Insights Acionáveis para Tomadas de Decisão Estratégicas 
         </h1>
         
-        <p className="font-poppins text-[18px] font-normal leading-[28px] text-[#75767C] mt-2 mb-6">
-A SDSync é uma plataforma de monitoramento contínuo que coleta e processa dados operacionais de inversores, sensores ambientais e demais ativos da usina. Utilizando algoritmos de inteligência artificial, o sistema identifica padrões de comportamento, detecta desvios operacionais e sugere ações corretivas com base em parâmetros técnicos consolidados. Tudo isso é apresentado em dashboards analíticos, que facilitam decisões estratégicas, manutenção preventiva e otimização da performance energética.
-        </p>
+        <div className="space-y-4">
+          <p className="font-poppins text-[18px] font-normal leading-[28px] text-[#75767C]">
+            A SDSync é uma plataforma de monitoramento contínuo que coleta e processa dados operacionais de inversores, sensores ambientais e demais ativos da usina.
+          </p>
+
+          <p className="font-poppins text-[18px] font-normal leading-[28px] text-[#75767C]">
+            Por meio de algoritmos de inteligência artificial, o sistema identifica padrões de comportamento, detecta desvios antes que impactem a geração e sugere ações corretivas com base em parâmetros técnicos definidos.
+          </p>
+
+          <p className="font-poppins text-[18px] font-normal leading-[28px] text-[#75767C]">
+            Todas as informações são organizadas em dashboards analíticos e intuitivos, facilitando a tomada de decisões estratégicas, a manutenção preventiva e a otimização da performance energética.
+          </p>
+        </div>
 
         <div className="mt-6 border-l-4 border-[#09BC8A] pl-4">
           <p className="font-poppins text-[22px] font-semibold leading-[34px] text-[#153243]">
-            &quot;Eficiência energética maximizada através de tecnologia de ponta&quot;
+            &quot;Tecnologia avançada para máxima eficiência energética&quot;
           </p>
         </div>
 
         <div className="mt-8 pt-6 border-t-2 border-[#DCE5F4]">
           <p className="font-poppins text-[20px] font-medium leading-[32px] text-[#4494D5]">
-           Tenha controle total sobre o desempenho da sua usina.
+           Monitore, detecte falhas e otimize sua usina com total controle. 
           </p>
         </div>
       </div>
@@ -30,7 +40,7 @@ A SDSync é uma plataforma de monitoramento contínuo que coleta e processa dado
       <div className="relative w-full max-w-2xl order-1 lg:order-2 group">
         <div className="relative aspect-video w-full rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 z-10">
           <Image
-            src="/sdsync.png"
+            src="/NivelUsina.png"
             alt="Monitoramento de usina solar"
             fill
             className="object-cover hover:scale-105 transition-transform duration-300"

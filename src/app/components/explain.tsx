@@ -9,11 +9,11 @@ export default function Explain() {
           >
             SmartDataSync – SDSync 
           </a>
-          <span className="block mt-4">Plataforma de Monitoramente de Desempenho para Parques Solares.</span>
+          <span className="block mt-4">Plataforma de Monitoramento de Performance para Parques Solares </span>
         </h1>
         
         <h2 className="mt-6 text-xl text-[#75767C] font-medium leading-6 max-w-4xl mx-auto tracking-wide">
-          Com foco em performance energética e gestão estratégica, a SDSync utiliza monitoramento contínuo, inteligência de dados e recursos preditivos para apoiar integradores, operadores e investidores na tomada de decisões que elevam o retorno e a eficiência dos ativos solares.  
+          Com foco em performance energética e gestão estratégica, a SDSync utiliza monitoramento contínuo, inteligência de dados e recursos preditivos para apoiar integradores, operadores e investidores na tomada de decisões que aumentam o retorno e a eficiência dos ativos solares — reduzindo perdas operacionais e riscos de indisponibilidade.   
         </h2>
 
         <div className="mt-8 border-b-2 border-[#09BC8A] w-24 mx-auto"></div>

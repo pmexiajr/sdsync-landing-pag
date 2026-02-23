@@ -66,11 +66,11 @@ export default function WelcomePage() {
             <div className="space-y-4">
               <h2>
                 <span className="text-2xl md:text-3xl font-semibold text-[#DCE5F4]">
-                  Controle Total e Eficiência para Usinas Solares GD
+                  Monitoramento inteligente para usinas solares GD 
                 </span>
               </h2>
               <p className="text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto md:mx-0">
-Solução SaaS com monitoramento contínuo, alertas automatizados via WhatsApp e indicadores estratégicos para maximizar desempenho e retorno sobre o investimento. 
+                Acompanhe a geração em tempo real, receba alertas automáticos no WhatsApp e identifique perdas de desempenho antes que virem prejuízo. 
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">

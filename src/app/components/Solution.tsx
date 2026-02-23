@@ -26,43 +26,43 @@ export default function Solution() {
 
   const features: FeatureCardProps[] = [
     {
-      title: "Análise Ambiental e Previsão",
-      description: "Monitoramento de irradiação e clima integrado",
-      image: "/irradiação.png",
-      expandedDescription: "Sistema de análise ambiental com:\n- Medição de irradiação solar e temperatura\n- Previsão meteorológica integrada\n- Correlação em tempo real entre condições climáticas e geração de energia",
+      title: "Inteligência Operacional para Inversores",
+      description: "Visibilidade total da geração e performance elétrica",
+      image: "/NivelInvesor.jpg",
+      expandedDescription: "Dashboard analítico com:\n- Monitoramento instantâneo de potência ativa (kW)\n- Controle de tensão e corrente por fase\n- Análise detalhada de strings fotovoltaicas\n- Histórico de geração e receita energética\n- Alertas e status operacional em tempo real",
       tags: [
-        { name: "Clima", colorHex: "#2D7D9A" },
-        { name: "Energia", colorHex: "#F6AE2D" }
+        { name: "Performance", colorHex: "#22C55E" },
+        { name: "Energia Solar", colorHex: "#F6AE2D" }
       ]
     },
     {
-      title: "Indicadores de Desempenho",
-      description: "Métricas de potência e eficiência energética",
-      image: "/dashpereira .png",
-      expandedDescription: "Painel de indicadores críticos:\n- Potência ativa instantânea\n- Rendimento (Yield: esperado vs. real)\n- Fator de capacidade e índice de desempenho\n- Metas de geração (projeção vs. entrega)",
+      title: "Central de Operações Energéticas",
+      description: "Controle total do portfólio de usinas em tempo real",
+      image: "/NivelUsinas.jpg",
+      expandedDescription: "Dashboard executivo com:\n- Monitoramento consolidado de todas as usinas\n- Indicadores globais de status e conectividade\n- Gestão centralizada de alarmes\n- Visualização geográfica das plantas\n- Comparativo de geração e rendimento total\n- Suporte à tomada de decisão estratégica",
       tags: [
-        { name: "Potência", colorHex: "#D84315" },
-        { name: "Eficiência", colorHex: "#2B6CB0" }
+        { name: "Analise", colorHex: "#0EA5E9" },
+        { name: "Supervisão", colorHex: "#F97316" }
       ]
     },
     {
-      title: "Eventos e Alarmes",
-      description: "Detecção de falhas e notificações automáticas",
-      image: "/alarme.png",
-      expandedDescription: "Monitoramento em tempo real com:\n- Detecção de falhas operacionais\n- Alertas via WhatsApp e histórico de alarmes\n- Classificação de anomalias por criticidade",
+      title: "Monitoramento Meteorológico Integrado",
+      description: "Análise das condições climáticas da usina",
+      image: "/NivelUsinasWeather.jpg",
+      expandedDescription: "Painel climático integrado com:\n- Temperatura ambiente e sensação térmica\n- Umidade relativa do ar\n- Velocidade e direção do vento\n- Cobertura de nuvens e visibilidade\n- Pressão atmosférica\n- Localização geográfica integrada ao mapa\n- Correlação entre condições climáticas e geração de energia",
       tags: [
-        { name: "Alertas", colorHex: "#C62828" },
-        { name: "Diagnóstico", colorHex: "#31708E" }
+        { name: "Clima", colorHex: "#0EA5E9" },
+        { name: "Análise Ambiental", colorHex: "#22C55E" }
       ]
     },
     {
-      title: "Equipamentos Monitorados",
-      description: "Supervisão de dispositivos industriais",
-      image: "/invertersView.png",
-      expandedDescription: "Monitoramento integral de:\n- Inversores (status, strings, falhas)\n- Rastreadores solares (ângulo de tracking)\n- Transformadores e medidores de faturamento\n- Relés de proteção e eletrocentros",
+      title: "Histórico de Geração e Performance",
+      description: "Dados armazenados com visualização personalizável por período",
+      image: "/Dashboard.png",
+      expandedDescription: "Painel analítico com:\n- Históricos completos dos dispositvos\n- Comparação consolidada entre equipamentos\n- Visualização acumulada e individual por usina\n- Seleção personalizada de período (dia, mês, trimestre, ano)\n- Análise detalhada por data com valores totais e segmentados\n- Base sólida para estudos de desempenho e tomada de decisão",
       tags: [
-        { name: "Inversores", colorHex: "#7E5835" },
-        { name: "Sensores", colorHex: "#2D7D9A" }
+        { name: "Histórico", colorHex: "#6366F1" },
+        { name: "Dados Estratégicos", colorHex: "#F59E0B" }
       ]
     }
   ];
@@ -76,7 +76,7 @@ export default function Solution() {
                 SDSync
               </span></h1>
             <p className="mx-auto max-w-3xl text-xl text-[#9FB3C8] leading-relaxed">
-              O SDSync é uma plataforma SaaS para monitoramento inteligente de usinas solares de Geração Distribuída
+              A SDSync é uma plataforma SaaS de monitoramento inteligente para usinas solares de Geração Distribuída, oferecendo visibilidade contínua e controle estratégico da operação. 
             </p>
           </div>
 
@@ -84,27 +84,27 @@ export default function Solution() {
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
               <ShieldCheckIcon className="h-12 w-12 mx-auto text-[#4494D5]" />
               <h3 className="text-2xl font-semibold text-[#DCE5F4] mt-4">Segurança Total</h3>
-              <p className="text-[#9FB3C8] mt-2">Monitoramento 24/7 com alertas de falha</p>
+              <p className="text-[#9FB3C8] mt-2">Monitoramento 24/7 com alertas automáticos de falhas operacionais</p>
             </div>
             
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
               <FaWhatsapp className="h-12 w-12 mx-auto text-[#25D366]" />
               <h3 className="text-2xl font-semibold text-[#DCE5F4] mt-4">WhatsApp</h3>
-              <p className="text-[#9FB3C8] mt-2">Receba indicadores de geração e desempenho diariamente</p>
+              <p className="text-[#9FB3C8] mt-2">Receba atualizações e alertas automáticos de geração e desempenho diretamente no seu celular</p>
             </div>
 
             <div className="text-center p-6 bg-[#DCE5F4]/10 rounded-2xl shadow-lg transition-all">
               <CloudIcon className="h-12 w-12 mx-auto text-[#E01A4F]" />
               <h3 className="text-2xl font-semibold text-[#DCE5F4] mt-4">Na Nuvem</h3>
-              <p className="text-[#9FB3C8] mt-2">Acesso remoto de qualquer dispositivo</p>
+              <p className="text-[#9FB3C8] mt-2">Acesso remoto seguro à plataforma de qualquer dispositivo</p>
             </div>
           </div>
         </div>
 
         <div className="mt-12 text-center">
           <p className="text-lg font-medium italic text-[#9FB3C8]">
-            &quot;Relatórios diários automáticos 
-            <span className="block mt-1 text-base">Simples, rápido e eficiente&quot;</span>
+            &quot;Relatórios diários automáticos — 
+            <span className="block mt-1 text-base">simples, rápidos e eficientes&quot;</span>
           </p>
         </div>
 
@@ -117,8 +117,7 @@ export default function Solution() {
               </span>
             </h2>
                         <p className="mx-auto max-w-3xl text-xl text-[#9FB3C8] leading-relaxed">
-               Tecnologia inteligente que vai além do monitoramento - tudo o que sua usina solar precisa 
-      para atingir o máximo potencial.
+               Tecnologia inteligente que vai além do monitoramento, entregando tudo o que sua usina solar precisa para atingir seu máximo potencial. 
             </p>
           </div>
 
