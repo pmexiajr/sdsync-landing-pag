@@ -58,7 +58,7 @@ export default function WelcomePage() {
             
             <div className="space-y-4">
               <h2>
-                <span className="text-2xl md:text-3xl font-semibold text-[#DCE5F4]">
+                <span className="text-2xl md:text-2xl font-bold text-[#DCE5F4]">
                   Monitoramento inteligente para usinas solares GD 
                 </span>
               </h2>

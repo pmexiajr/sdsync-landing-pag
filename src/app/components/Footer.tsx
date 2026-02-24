@@ -1,77 +1,14 @@
 'use client'
 
-import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
+import React from "react";
 import { FaLinkedin } from "react-icons/fa";
-import { FiCheckCircle, FiXCircle, FiMail } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSending, setIsSending] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setErrorMessage("Por favor, insira um e-mail válido.");
-      return;
-    }
-    setIsModalOpen(true);
-    setErrorMessage("");
-  };
-
-  const handleSendEmail = async () => {
-    if (!message.trim()) {
-      setErrorMessage("Por favor, insira uma mensagem.");
-      return;
-    }
-
-    setIsSending(true);
-    setErrorMessage("");
-
-    try {
-      await emailjs.send(
-        "service_38lfzb8",
-        "template_ms3823c",
-        {
-          to_email: "paulino.mexiajr@mextech.com.br",
-          from_email: email,
-          from_name: email.split('@')[0] || "Usuário",
-          message: message,
-          reply_to: email
-        },
-        "Ik63F9w4Ivfj49xlh"
-      );
-
-      setIsSuccess(true);
-      setTimeout(() => {
-        setIsModalOpen(false);
-        setIsSuccess(false);
-        setEmail("");
-        setMessage("");
-      }, 2000);
-    } catch (error) {
-      console.error("Erro ao enviar e-mail:", error);
-      setErrorMessage("Serviço de e-mail temporariamente indisponível. Por favor, tente novamente mais tarde.");
-    } finally {
-      setIsSending(false);
-    }
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setErrorMessage("");
-    if (!isSuccess) setMessage("");
-  };
-
   return (
     <footer className="bg-[#153243] py-12 px-6 shadow-lg overflow-hidden">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-[#DCE5F4]/30 pb-10">
+        {/* Navegação */}
         <div>
           <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Navegação</h5>
           <ul className="flex flex-col gap-3">
@@ -103,6 +40,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Sobre nós */}
         <div>
           <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Sobre nós</h5>
           <p className="text-[#DCE5F4]/90 mb-4">Estamos sempre prontos para atender às suas necessidades.</p>
@@ -119,6 +57,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Contato */}
         <div>
           <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Contato</h5>
           <address className="not-italic text-[#DCE5F4]/90">
@@ -130,119 +69,37 @@ export default function Footer() {
           </address>
         </div>
 
+        {/* Fale conosco via WhatsApp */}
         <div>
-          <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Envie uma mensagem</h5>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiMail className="text-[#9FB3C8]" />
-              </div>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Seu e-mail"
-                className="w-full pl-10 pr-4 py-3 border border-[#DCE5F4]/50 rounded-lg focus:ring-2 focus:ring-[#FF4000] focus:outline-none bg-[#101B23] text-[#DCE5F4] placeholder-[#9FB3C8]/50"
-                required
-              />
-            </div>
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-6 py-3 bg-gradient-to-r from-[#FF4000] to-[#E01A4F] text-[#DCE5F4] rounded-lg hover:opacity-90 transition-all font-medium shadow-lg flex items-center justify-center gap-2"
+          <h5 className="text-lg font-bold text-[#DCE5F4] mb-4">Fale Conosco</h5>
+          <p className="text-[#DCE5F4]/90 mb-4">Fale diretamente com nossa equipe pelo WhatsApp.</p>
+          <motion.a
+            href="https://api.whatsapp.com/send?phone=5511995748431"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 bg-[#09BC8A] text-white py-3 px-6 rounded-lg shadow-lg hover:bg-[#07A076] transition-all group"
+          >
+            <svg 
+              className="w-5 h-5" 
+              fill="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <FiMail /> Enviar
-            </motion.button>
-          </form>
-          {errorMessage && (
-            <motion.p 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-[#FF6B6B] mt-2 text-sm flex items-center gap-1"
-            >
-              <FiXCircle /> {errorMessage}
-            </motion.p>
-          )}
+              <path d="M12 2C6.48 2 2 6.48 2 12c0 2.12.68 4.14 1.94 5.82L2 22l4.28-1.94C7.86 21.32 9.88 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.86 0-3.6-.56-5.06-1.52l-.36-.22-2.55 1.16 1.16-2.55-.22-.36C3.56 15.6 3 13.86 3 12c0-4.96 4.04-9 9-9s9 4.04 9 9-4.04 9-9 9zm5-6.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.18.2-.35.22-.65.07-1.85-.92-3.06-1.93-3.85-3.29-.29-.5.29-.46.83-1.53.1-.17.05-.32-.03-.47-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.03 1.01-1.03 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.19 5.06 4.37.71.28 1.26.45 1.69.58.71.22 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.19-.57-.3z"/>
+            </svg>
+            <span>Enviar mensagem</span>
+          </motion.a>
         </div>
       </div>
 
+      {/* Direitos autorais */}
       <div className="container mx-auto mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
         <p className="text-[#DCE5F4]/80 text-center md:text-right">
           &copy; {new Date().getFullYear()} SDSync. Todos os direitos reservados.
         </p>
       </div>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-[#101B23]/90 z-50 backdrop-blur-sm">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-[#153243] p-6 rounded-lg shadow-xl border border-[#2A3641] w-full max-w-md mx-4"
-          >
-            {isSuccess ? (
-              <div className="text-center py-8">
-                <FiCheckCircle className="text-[#09BC8A] text-5xl mx-auto mb-4" />
-                <h2 className="text-xl font-bold mb-2 text-[#DCE5F4]">Mensagem enviada!</h2>
-                <p className="text-[#9FB3C8]">Obrigado pelo seu contato. Retornaremos em breve.</p>
-              </div>
-            ) : (
-              <>
-                <h2 className="text-xl font-bold mb-4 text-[#DCE5F4]">Sua mensagem</h2>
-                <p className="text-[#9FB3C8] mb-4">Deixe sua mensagem para nossa equipe:</p>
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="w-full p-3 border border-[#2A3641] rounded-lg text-[#DCE5F4] bg-[#101B23] focus:ring-2 focus:ring-[#FF4000] focus:outline-none placeholder-[#9FB3C8]/50"
-                  rows={5}
-                  placeholder="Escreva aqui sua mensagem..."
-                  required
-                ></textarea>
-                
-                {errorMessage && (
-                  <motion.p 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-[#FF6B6B] mt-2 text-sm flex items-center gap-1"
-                  >
-                    <FiXCircle /> {errorMessage}
-                  </motion.p>
-                )}
-
-                <div className="flex justify-end mt-6 gap-3">
-                  <motion.button
-                    onClick={closeModal}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-5 py-2.5 bg-[#2A3641] text-[#DCE5F4] rounded-lg hover:bg-[#3A4A58] transition-colors font-medium"
-                  >
-                    Cancelar
-                  </motion.button>
-                  <motion.button
-                    onClick={handleSendEmail}
-                    disabled={isSending}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-5 py-2.5 bg-gradient-to-r from-[#09BC8A] to-[#07A076] text-[#153243] rounded-lg hover:opacity-90 transition-opacity font-medium disabled:opacity-70 flex items-center gap-2"
-                  >
-                    {isSending ? (
-                      <>
-                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Enviando...
-                      </>
-                    ) : (
-                      "Enviar mensagem"
-                    )}
-                  </motion.button>
-                </div>
-              </>
-            )}
-          </motion.div>
-        </div>
-      )}
     </footer>
   );
 }

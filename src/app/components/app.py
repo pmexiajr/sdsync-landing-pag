@@ -34,7 +34,7 @@ def send_demo():
         date_formatted = date_str
         time_formatted = ''
 
-    whatsapp_message = f"""🚀 *NOVO AGENDAMENTO DE DEMONSTRAÇÃO*
+    whatsapp_message = f"""*NOVO AGENDAMENTO DE DEMONSTRAÇÃO*
 
 Um novo agendamento foi realizado através do site SDSync.
 
@@ -44,8 +44,9 @@ Um novo agendamento foi realizado através do site SDSync.
 📱 *Telefone:* {phone}
 🏢 *Empresa:* {company or 'Não informada'}
 ━━━━━━━━━━━━━━━━━━
+Data e horário sugeridos da reunião:
 
-📅 *Data da Reunião:* {date_formatted}
+📅 *Data:* {date_formatted}
 ⏰ *Horário:* {time_formatted}
 
 📝 *Observações do Cliente:*

@@ -103,8 +103,8 @@ export default function Solution() {
 
         <div className="mt-12 text-center">
           <p className="text-lg font-medium italic text-[#9FB3C8]">
-            &quot;Relatórios diários automáticos — 
-            <span className="block mt-1 text-base">simples, rápidos e eficientes&quot;</span>
+            Relatórios diários automáticos 
+            <span className="block mt-1 text-base">&quot;simples, rápidos e eficientes&quot;</span>
           </p>
         </div>
 

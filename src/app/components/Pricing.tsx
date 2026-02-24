@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    tier: 'Monitoramento Operacional ',
+    tier: 'Monitoramento Operacional',
     price: '100',
     color: '#09BC8A',
     features: [
@@ -14,25 +14,24 @@ const plans = [
       'Indicadores principais de desempenho'
     ],
     icon: FiZap,
-    cta: 'Primeiro Passo'
+    popular: false
   },
   {
-    tier: 'Monitoramento Avançado ',
+    tier: 'Monitoramento Avançado',
     price: '400',
     color: '#E01A4F',
     features: [
       'Indicadores completos de performance (PR, disponibilidade, yield)',
-      'Histórico de dados e análises comparativas ',
+      'Histórico de dados e análises comparativas',
       'Alertas inteligentes configuráveis',
       'Monitoramento por inversor e string',
       'Alertas inteligentes (ex: perda de geração, falha recorrente, PR abaixo da meta)'
     ],
     icon: FiStar,
-    cta: 'Maximizar Performance',
     popular: true
   },
   {
-    tier: 'Gestão Estratégica de Performance ',
+    tier: 'Gestão Estratégica de Performance',
     price: 'Custom',
     color: '#FF4000',
     features: [
@@ -43,7 +42,7 @@ const plans = [
       'Armazenamento de dados e backup customizados',
     ],
     icon: FiSettings,
-    cta: 'Falar com Especialista'
+    popular: false
   }
 ];
 
@@ -53,76 +52,84 @@ type Plan = {
   color: string;
   features: string[];
   icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
-  cta: string;
   popular?: boolean;
 };
 
-// Controle para ocultar visualmente os preços (mantendo o código)
 const HIDE_PRICES = true;
+const WHATSAPP_NUMBER = '5544988110181';
+const WHATSAPP_BASE_URL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`;
 
-const PlanCard = ({ plan }: { plan: Plan }) => (
-  <motion.div 
-    className="relative flex flex-col h-full p-8 rounded-2xl border border-[rgba(42,54,65,0.3)] bg-[rgba(16,27,35,0.6)] shadow-xl"
-    whileHover={{ y: -10, scale: 1.02 }}
-    transition={{ type: 'spring', stiffness: 300 }}
-  >
-    {plan.popular && (
-      <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[rgba(224,26,79,0.9)] text-white px-4 py-1 rounded-full text-sm font-medium"
-        style={{ boxShadow: `0 4px 20px -5px ${plan.color}80` }}
-      >
-        Mais Popular
-      </div>
-    )}
-    
-    <div className="flex flex-col items-center text-center mb-8">
-      <plan.icon 
-        className="text-4xl mb-4 drop-shadow-md" 
-        style={{ color: plan.color }}
-      />
-      <h3 className="text-2xl font-bold text-[rgba(220,229,244,0.9)] mb-2">{plan.tier}</h3>
-      <div className="flex flex-col items-center">
-        {plan.tier === 'Custom' ? (
-          <div className="text-sm text-[rgba(117,118,124,0.8)]">Sob consulta</div>
-        ) : (
-          <>
-            {/* <span className="text-sm font-medium text-[rgba(117,118,124,0.8)]">A partir de</span> */}
-            {/* Div do preço ocultada visualmente quando HIDE_PRICES é true */}
+const PlanCard = ({ plan }: { plan: Plan }) => {
+  const whatsappMessage = encodeURIComponent(
+    `Olá! Gostaria de solicitar um Plano Personalizado da SDSync para minha usina. Poderia me orientar sobre as próximas etapas?`
+  );
+  const whatsappLink = `${WHATSAPP_BASE_URL}&text=${whatsappMessage}`;
+
+  return (
+    <motion.div
+      className="relative flex flex-col h-full p-8 rounded-2xl border border-[rgba(42,54,65,0.3)] bg-[rgba(16,27,35,0.6)] shadow-xl"
+      whileHover={{ y: -10, scale: 1.02 }}
+      transition={{ type: 'spring', stiffness: 300 }}
+    >
+      {plan.popular && (
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[rgba(224,26,79,0.9)] text-white px-4 py-1 rounded-full text-sm font-medium"
+          style={{ boxShadow: `0 4px 20px -5px ${plan.color}80` }}
+        >
+          Gestão Completa
+        </div>
+      )}
+
+      <div className="flex flex-col items-center text-center mb-8">
+        <plan.icon
+          className="text-4xl mb-4 drop-shadow-md"
+          style={{ color: plan.color }}
+        />
+        <h3 className="text-2xl font-bold text-[rgba(220,229,244,0.9)] mb-2">{plan.tier}</h3>
+        <div className="flex flex-col items-center">
+          {plan.tier === 'Gestão Estratégica de Performance' ? (
+            <div className="text-sm text-[rgba(117,118,124,0.8)]"></div>
+          ) : (
             <div className={`flex items-baseline gap-1 ${HIDE_PRICES ? 'hidden' : ''}`}>
               <span className="text-4xl font-bold" style={{ color: plan.color }}>
                 R${plan.price}
               </span>
               <span className="text-sm text-[rgba(117,118,124,0.8)]">/mês</span>
             </div>
-          </>
-        )}
+          )}
+        </div>
       </div>
-    </div>
 
-    <ul className="space-y-4 mb-8 flex-grow">
-      {plan.features.map((feature, idx) => (
-        <li key={idx} className="flex items-center gap-3 text-[rgba(220,229,244,0.9)]">
-          <FiCheck className="text-[#09BC8A] shrink-0" />
-          <span className="text-sm">{feature}</span>
-        </li>
-      ))}
-    </ul>
+      <ul className="space-y-4 mb-8 flex-grow">
+        {plan.features.map((feature, idx) => (
+          <li key={idx} className="flex items-center gap-3 text-[rgba(220,229,244,0.9)]">
+            <FiCheck className="text-[#09BC8A] shrink-0" />
+            <span className="text-sm">{feature}</span>
+          </li>
+        ))}
+      </ul>
 
-    <motion.button
-      className="w-full py-3 rounded-lg font-semibold transition-all border border-[rgba(255,255,255,0.1)] mt-auto"
-      style={{
-        backgroundColor: `${plan.color}CC`,
-        color: '#FFFFFF'
-      }}
-      whileHover={{ 
-        scale: 1.05,
-        boxShadow: `0 8px 24px -6px ${plan.color}80`
-      }}
-    >
-      {plan.cta}
-    </motion.button>
-  </motion.div>
-);
+      {plan.popular && (
+        <motion.a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full py-3 rounded-lg font-semibold transition-all border border-[rgba(255,255,255,0.1)] mt-auto text-center block"
+          style={{
+            backgroundColor: `${plan.color}CC`,
+            color: '#FFFFFF'
+          }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: `0 8px 24px -6px ${plan.color}80`
+          }}
+        >
+          Solicitar plano personalizado
+        </motion.a>
+      )}
+    </motion.div>
+  );
+};
 
 export default function PricingSection() {
   return (
@@ -133,7 +140,7 @@ export default function PricingSection() {
             Solução Completa para Gestão Energética
           </h2>
           <p className="text-[#8A9BA8] max-w-2xl mx-auto">
-            A SDSync oferece uma estrutura completa de monitoramento e análise para diferentes níveis de operação solar, dimensionada conforme a potência instalada e a complexidade da usina. 
+            A SDSync oferece uma estrutura completa de monitoramento e análise para diferentes níveis de operação solar, dimensionada conforme a potência instalada e a complexidade da usina.
           </p>
         </div>
 
@@ -144,7 +151,7 @@ export default function PricingSection() {
         </div>
 
         <div className="mt-12 text-center text-[#8A9BA8] text-sm">
-          <p>Valores dos planos aumentão conforme a Faixa de Potência(kw) monitorada • Todos os planos incluem Suporte técnico especializado</p>
+          <p>Valores aumentam conforme a Faixa de Potência (kW) monitorada • Suporte técnico especializado sempre incluso</p>
         </div>
       </div>
     </section>

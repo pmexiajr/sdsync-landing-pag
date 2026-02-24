@@ -53,8 +53,6 @@ const Advantages = () => {
     setErrorMessage('');
 
     try {
-      // Em desenvolvimento: URL do backend Flask (porta 5000)
-      // Se usar proxy no Next.js, pode ser apenas '/api/send-demo-whatsapp'
       const response = await fetch('http://localhost:5000/api/send-demo-whatsapp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -128,7 +126,7 @@ const Advantages = () => {
               </div>
             ) : (
               <>
-                <h3 className="text-2xl font-bold text-[#DCE5F4] mb-6">Agendar Demonstração</h3>
+                <h3 className="text-2xl font-bold text-[#DCE5F4] mb-6">Agendar reunião</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -244,7 +242,7 @@ const Advantages = () => {
                         Enviando...
                       </>
                     ) : (
-                      'Confirmar Agendamento'
+                      'Confirmar agendamento'
                     )}
                   </button>
                 </form>
@@ -371,7 +369,7 @@ const Advantages = () => {
                 className="bg-[#FF4000] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#E01A4F] transition-colors flex items-center justify-center gap-2 mx-auto lg:mx-0"
               >
                 <CalendarIcon className="h-5 w-5" />
-                Agendar Demonstração
+                Agendar reunião
               </button>
             </div>
           </div>
