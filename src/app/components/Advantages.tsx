@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import emailjs from '@emailjs/browser';
 import { FiCheckCircle } from 'react-icons/fi';
 import {
   BoltIcon,
@@ -54,19 +53,19 @@ const Advantages = () => {
     setErrorMessage('');
 
     try {
-      await emailjs.send(
-        'service_38lfzb8',
-        'template_oqhy2cq',
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          date: formData.date,
-          message: formData.message
-        },
-        'Ik63F9w4Ivfj49xlh'
-      );
+      // Em desenvolvimento: URL do backend Flask (porta 5000)
+      // Se usar proxy no Next.js, pode ser apenas '/api/send-demo-whatsapp'
+      const response = await fetch('http://localhost:5000/api/send-demo-whatsapp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Erro ao enviar mensagem');
+      }
 
       setIsSuccess(true);
       setFormData({
@@ -75,11 +74,11 @@ const Advantages = () => {
         phone: '',
         company: '',
         date: '',
-        message: ''
+        message: '',
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erro ao enviar:', error);
-      setErrorMessage('Erro ao enviar o formulário. Por favor, tente novamente.');
+      setErrorMessage(error.message || 'Erro ao enviar o formulário. Tente novamente.');
     } finally {
       setIsSending(false);
     }
