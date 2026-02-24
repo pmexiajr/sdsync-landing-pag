@@ -6,10 +6,21 @@ from datetime import datetime
 import os
 import re
 
-load_dotenv() 
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+
+# 🔥 CORS configurado corretamente para seu frontend
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": ["https://www.sdsync.com.br"],
+            "methods": ["POST", "OPTIONS"],
+            "allow_headers": ["Content-Type"]
+        }
+    }
+)
 
 zapi = ZAPI()
 target_number = os.getenv("ZAPI_TARGET_NUMBER")
@@ -24,9 +35,14 @@ def is_valid_phone(phone: str) -> bool:
     return len(digits) >= 10
 
 
-@app.route('/api/send-demo-whatsapp', methods=['POST'])
+@app.route('/api/send-demo-whatsapp', methods=['POST', 'OPTIONS'])
 def send_demo():
-    data = request.get_json()
+
+    # 🔥 Responde automaticamente ao preflight
+    if request.method == "OPTIONS":
+        return jsonify({"ok": True}), 200
+
+    data = request.get_json(silent=True)
 
     if not data:
         return jsonify({'error': 'Payload inválido'}), 400
@@ -76,7 +92,7 @@ def send_demo():
         message=whatsapp_message
     )
 
-    if result["status"] == "sent":
+    if result.get("status") == "sent":
         return jsonify({'success': True}), 200
 
     return jsonify({'error': 'Falha ao enviar mensagem'}), 500
