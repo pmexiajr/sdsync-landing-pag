@@ -57,6 +57,9 @@ type Plan = {
   popular?: boolean;
 };
 
+// Controle para ocultar visualmente os preços (mantendo o código)
+const HIDE_PRICES = true;
+
 const PlanCard = ({ plan }: { plan: Plan }) => (
   <motion.div 
     className="relative flex flex-col h-full p-8 rounded-2xl border border-[rgba(42,54,65,0.3)] bg-[rgba(16,27,35,0.6)] shadow-xl"
@@ -83,8 +86,9 @@ const PlanCard = ({ plan }: { plan: Plan }) => (
           <div className="text-sm text-[rgba(117,118,124,0.8)]">Sob consulta</div>
         ) : (
           <>
-            <span className="text-sm font-medium text-[rgba(117,118,124,0.8)]">A partir de</span>
-            <div className="flex items-baseline gap-1">
+            {/* <span className="text-sm font-medium text-[rgba(117,118,124,0.8)]">A partir de</span> */}
+            {/* Div do preço ocultada visualmente quando HIDE_PRICES é true */}
+            <div className={`flex items-baseline gap-1 ${HIDE_PRICES ? 'hidden' : ''}`}>
               <span className="text-4xl font-bold" style={{ color: plan.color }}>
                 R${plan.price}
               </span>

@@ -116,39 +116,42 @@ export default function AboutUs() {
           </motion.div>
         </div>
 
-        {/* BLOCO DE DESTAQUE - Mextech (REFORMULADO IGUAL AO CARD DE CITAÇÃO) */}
-        <div className="10 p-8 rounded-2xl border-l-[6px] border-[#09BC8A]">
+        {/* BLOCO DE DESTAQUE - Mextech */}
+        <div className="p-8 rounded-2xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Texto */}
-            <p className="text-lg md:text-xl text-[#101B23] leading-relaxed text-center md:text-left">
-              <span className="font-bold">
-                Produto desenvolvido pela Mextech Tecnologia Industrial
-              </span>
-              <br />
-              <span className="text-[#101B23]/90">
-                Mais de uma década de experiência em automação e soluções para o setor energético.
-              </span>
-            </p>
+            
+            {/* Texto com borda */}
+            <div className="border-l-[6px] border-[#09BC8A] pl-6">
+              <p className="text-lg md:text-xl text-[#101B23] leading-relaxed text-center md:text-left">
+                <span className="font-bold">
+                  Produto desenvolvido pela Mextech Tecnologia Industrial
+                </span>
+                <br />
+                <span className="text-[#101B23]/90">
+                  Mais de uma década de experiência em automação e soluções para o setor energético.
+                </span>
+              </p>
+            </div>
 
-            {/* Logo com link */}
+            {/* Logo */}
             <a
               href="https://www.mextech.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+              className="p-4 rounded-xl hover:shadow-lg transition-shadow"
             >
               <Image
-                src="/logo.jpg"
+                src="/logo4.png"
                 alt="Mextech Tecnologia Industrial"
-                width={160}
-                height={56}
-                className="object-contain w-auto h-12 md:h-14"
+                width={300}
+                height={120}
+                className="object-contain w-auto h-24 md:h-32"
               />
             </a>
+
           </div>
         </div>
 
-        {/* Seção Nosso Propósito */}
         <div className="space-y-8">
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-[#101B23] tracking-tight"
