@@ -54,7 +54,7 @@ const Advantages = () => {
 
     try {
       const response = await fetch(
-        'http://lp.sdsync.com.br/api/send-demo-whatsapp',
+        'https://lp.sdsync.com.br/api/send-demo-whatsapp',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
