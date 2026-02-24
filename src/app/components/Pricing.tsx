@@ -56,7 +56,7 @@ type Plan = {
 };
 
 const HIDE_PRICES = true;
-const WHATSAPP_NUMBER = '5544988110181';
+const WHATSAPP_NUMBER = '5511995748431';
 const WHATSAPP_BASE_URL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`;
 
 const PlanCard = ({ plan }: { plan: Plan }) => {
