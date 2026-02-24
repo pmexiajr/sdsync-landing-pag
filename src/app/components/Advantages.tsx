@@ -53,7 +53,7 @@ const Advantages = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/send-demo-whatsapp', {
+      const response = await fetch('http://191.7.190.110:5000/api/send-demo-whatsapp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
